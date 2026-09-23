@@ -1,0 +1,5 @@
+[
+  ["aspirin", "affects", "platelet aggregation"],
+  ["platelet aggregation", "related_to", "cardiovascular prevention"],
+  ["cardiovascular prevention", "uses", "antiplatelet therapy"]
+]

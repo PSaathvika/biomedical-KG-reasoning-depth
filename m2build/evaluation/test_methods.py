@@ -1,0 +1,49 @@
+import numpy as np
+
+from src.shared.knowledge_graph import KnowledgeGraph
+from src.shared.vector_store import FAISSVectorStore
+from src.biomedkai import BiomedKAI
+from src.kragen import KRAGEN
+from src.hypergraph_rag import HyperGraphRAG
+
+
+class FakeEmbedder:
+    def encode(self, texts):
+        return np.asarray([[1.0, 0.0] for _ in texts], dtype="float32")
+
+
+def build_components():
+    embedder = FakeEmbedder()
+    store = FAISSVectorStore(2)
+    docs = [
+        "Aspirin is related to platelet aggregation and cardiovascular prevention.",
+        "Platelet aggregation is affected by cyclooxygenase inhibition.",
+        "Cardiovascular prevention can involve antiplatelet therapy.",
+    ]
+    store.add(embedder.encode(docs), docs)
+    kg = KnowledgeGraph([
+        ("aspirin", "affects", "platelet aggregation"),
+        ("platelet aggregation", "related_to", "cardiovascular prevention"),
+        ("cardiovascular prevention", "uses", "antiplatelet therapy"),
+    ])
+    return embedder, store, kg
+
+
+def main():
+    embedder, store, kg = build_components()
+    q = "What is aspirin related to?"
+
+    biomedkai = BiomedKAI(embedder, store, kg)
+    kragen = KRAGEN(embedder, store)
+    hyper = HyperGraphRAG(embedder, store)
+
+    for depth in (1, 2, 3):
+        assert biomedkai.retrieve_and_reason(q, depth=depth)["depth"] == depth
+        assert kragen.retrieve_and_reason(q, depth=depth)["depth"] == depth
+        assert hyper.retrieve_and_reason(q, depth=depth)["depth"] == depth
+
+    print("Milestone 2 method smoke tests passed for depths 1, 2 and 3.")
+
+
+if __name__ == "__main__":
+    main()
