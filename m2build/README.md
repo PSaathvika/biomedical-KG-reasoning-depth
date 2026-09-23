@@ -81,3 +81,17 @@ biomedical-kg-reasoning-depth/
 ├── logs/
 └── .gitkeep files
 ```
+## Milestone 2 — Graph-Based Reasoning Methods
+
+Milestone 2 implements three graph-based biomedical reasoning methods:
+
+- BiomedKAI
+- KRAGEN
+- HyperGraphRAG
+
+The implementations use the shared retrieval infrastructure, including
+the KnowledgeGraph and FAISSVectorStore components.
+
+### Verification
+
+
