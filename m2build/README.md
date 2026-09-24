@@ -1,4 +1,4 @@
-# Biomedical KG Reasoning Depth — Milestone 2 Package
+# Biomedical KG Reasoning Depth — Milestone 2 and 3
 
 This package contains the code and repository structure needed for Milestone 2:
 
@@ -95,3 +95,9 @@ the KnowledgeGraph and FAISSVectorStore components.
 ### Verification
 
 
+## Milestone 3 — Matched-Budget Flat Control
+
+Milestone 3 adds a flat retrieval-and-reasoning control in:
+
+```text
+src/flat_control.py
