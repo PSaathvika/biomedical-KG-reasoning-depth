@@ -6,9 +6,16 @@ sys.path.insert(0, str(ROOT))
 
 import csv
 import json
+import re
 import time
 
 import numpy as np
+import torch
+from transformers import (
+    AutoTokenizer,
+    AutoModel,
+    AutoModelForCausalLM,
+)
 
 from src.shared.knowledge_graph import KnowledgeGraph
 from src.shared.vector_store import FAISSVectorStore
@@ -17,6 +24,10 @@ from src.kragen import KRAGEN
 from src.hypergraph_rag import HyperGraphRAG
 from src.flat_control import FlatControl
 
+
+# ============================================================
+# PATHS / EXPERIMENT SETTINGS
+# ============================================================
 
 RESULTS_DIR = ROOT / "results"
 RESULTS_DIR.mkdir(exist_ok=True)
@@ -35,72 +46,203 @@ METHODS = (
 
 QUESTIONS_PER_DATASET = 20
 
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-class FakeEmbedder:
+BIOMEDBERT_NAME = (
+    "microsoft/"
+    "BiomedNLP-BiomedBERT-base-uncased-abstract-fulltext"
+)
+
+BIOMISTRAL_NAME = "BioMistral/BioMistral-7B"
+
+
+# ============================================================
+# REAL BIOMEDBERT EMBEDDER
+# ============================================================
+
+class BioMedBERTEmbedder:
     """
-    Lightweight deterministic embedder for infrastructure validation.
+    Real BioMedBERT encoder used for FAISS retrieval.
 
-    This keeps the pilot independent of the large biomedical embedding
-    model while verifying the complete experiment controller.
-    """
-
-    def encode(self, texts):
-        vectors = []
-
-        for text in texts:
-            text = text.lower()
-
-            vector = [
-                float("aspirin" in text),
-                float("platelet" in text),
-                float("cardiovascular" in text),
-                float("therapy" in text),
-                float("cancer" in text),
-                float("gene" in text),
-                float("protein" in text),
-                float("drug" in text),
-            ]
-
-            if not any(vector):
-                vector[0] = 1.0
-
-            vectors.append(vector)
-
-        return np.asarray(vectors, dtype="float32")
-
-
-class FakeLLM:
-    """
-    Deterministic LLM replacement.
-
-    Every call is recorded so the depth budget can be verified.
+    Mean-pools the last hidden state and L2-normalizes the
+    resulting vectors.
     """
 
-    def __init__(self):
-        self.calls = []
+    def __init__(self, model_name=BIOMEDBERT_NAME):
+        print()
+        print("=" * 70)
+        print("Loading BioMedBERT")
+        print("=" * 70)
 
-    def generate(self, prompt, max_new_tokens=128):
-        self.calls.append(prompt)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-        return (
-            f"Pilot reasoning step {len(self.calls)}: "
-            "the retrieved biomedical evidence is relevant."
+        self.model = AutoModel.from_pretrained(
+            model_name
+        ).to(DEVICE)
+
+        self.model.eval()
+
+        self.dimension = int(
+            self.model.config.hidden_size
         )
 
+        print(f"BioMedBERT dimension: {self.dimension}")
+        print(f"BioMedBERT device: {DEVICE}")
+
+    @torch.no_grad()
+    def encode(self, texts):
+        encoded = self.tokenizer(
+            texts,
+            padding=True,
+            truncation=True,
+            max_length=512,
+            return_tensors="pt",
+        )
+
+        encoded = {
+            key: value.to(DEVICE)
+            for key, value in encoded.items()
+        }
+
+        outputs = self.model(**encoded)
+
+        hidden = outputs.last_hidden_state
+
+        mask = encoded["attention_mask"].unsqueeze(-1)
+
+        masked_hidden = hidden * mask
+
+        summed = masked_hidden.sum(dim=1)
+
+        counts = mask.sum(dim=1).clamp(min=1)
+
+        embeddings = summed / counts
+
+        embeddings = torch.nn.functional.normalize(
+            embeddings,
+            p=2,
+            dim=1,
+        )
+
+        return embeddings.cpu().numpy().astype("float32")
+
+
+# ============================================================
+# REAL BIOMISTRAL LLM
+# ============================================================
+
+class BioMistralLLM:
+    """
+    Real BioMistral-7B generation wrapper.
+
+    Every generation is recorded so the experiment can report:
+      - LLM calls
+      - input tokens
+      - output tokens
+      - total tokens
+    """
+
+    def __init__(self, model_name=BIOMISTRAL_NAME):
+        print()
+        print("=" * 70)
+        print("Loading BioMistral-7B")
+        print("=" * 70)
+
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            model_name
+        )
+
+        if self.tokenizer.pad_token is None:
+            self.tokenizer.pad_token = (
+                self.tokenizer.eos_token
+            )
+
+        self.model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            torch_dtype=torch.float16,
+            device_map="auto",
+        )
+
+        self.model.eval()
+
+        self.calls = []
+
+        print("BioMistral loaded")
+        print("Input device:", next(self.model.parameters()).device)
+
+    @torch.no_grad()
+    def generate(self, prompt, max_new_tokens=64):
+        encoded = self.tokenizer(
+            prompt,
+            return_tensors="pt",
+            truncation=True,
+            max_length=4096,
+        )
+
+        input_ids = encoded["input_ids"].to(
+            self.model.device
+        )
+
+        attention_mask = encoded[
+            "attention_mask"
+        ].to(self.model.device)
+
+        input_tokens = int(
+            input_ids.shape[1]
+        )
+
+        output_ids = self.model.generate(
+    input_ids=input_ids,
+    attention_mask=attention_mask,
+    max_new_tokens=max_new_tokens,
+    min_new_tokens=8,
+    do_sample=False,
+    pad_token_id=self.tokenizer.eos_token_id,
+)
+
+        generated_ids = output_ids[
+            0,
+            input_tokens:
+        ]
+
+        output_tokens = int(
+            generated_ids.shape[0]
+        )
+
+        answer = self.tokenizer.decode(
+            generated_ids,
+            skip_special_tokens=True,
+        ).strip()
+
+        total_tokens = (
+            input_tokens
+            + output_tokens
+        )
+
+        self.calls.append(
+            {
+                "input_tokens": input_tokens,
+                "output_tokens": output_tokens,
+                "total_tokens": total_tokens,
+            }
+        )
+
+        return answer
+
+
+# ============================================================
+# DATA LOADING
+# ============================================================
 
 def load_json(path):
-    with path.open("r", encoding="utf-8") as f:
+    with path.open(
+        "r",
+        encoding="utf-8",
+    ) as f:
         return json.load(f)
 
 
 def select_medmcqa_questions():
-    """
-    Select a deterministic set of 20 MedMCQA questions.
-
-    The source file is already in a fixed order, so selecting the first
-    20 records makes the selection reproducible.
-    """
-
     path = ROOT / "data" / "medmcqa" / "dev.json"
 
     rows = load_json(path)
@@ -124,8 +266,12 @@ def select_medmcqa_questions():
                     row["opd"],
                 ],
                 "correct_choice": row["cop"],
-                "subject_name": row.get("subject_name"),
-                "topic_name": row.get("topic_name"),
+                "subject_name": row.get(
+                    "subject_name"
+                ),
+                "topic_name": row.get(
+                    "topic_name"
+                ),
             }
         )
 
@@ -133,13 +279,6 @@ def select_medmcqa_questions():
 
 
 def select_pubmedqa_questions():
-    """
-    Select a deterministic set of 20 PubMedQA questions.
-
-    The source file is already in a fixed order, so selecting the first
-    20 records makes the selection reproducible.
-    """
-
     path = ROOT / "data" / "pubmedqa" / "pqa_labeled.json"
 
     rows = load_json(path)
@@ -166,15 +305,15 @@ def select_pubmedqa_questions():
 
 
 def freeze_questions():
-    """
-    Freeze the exact 20-question subset from each dataset.
-
-    The frozen file is written once and reused on subsequent runs.
-    """
-
     if QUESTION_FILE.exists():
-        print(f"Using existing frozen questions: {QUESTION_FILE}")
-        return load_json(QUESTION_FILE)
+        print(
+            f"Using existing frozen questions: "
+            f"{QUESTION_FILE}"
+        )
+
+        return load_json(
+            QUESTION_FILE
+        )
 
     frozen = {
         "MedMCQA": select_medmcqa_questions(),
@@ -192,10 +331,17 @@ def freeze_questions():
             ensure_ascii=False,
         )
 
-    print(f"Frozen questions written to: {QUESTION_FILE}")
+    print(
+        f"Frozen questions written to: "
+        f"{QUESTION_FILE}"
+    )
 
     return frozen
 
+
+# ============================================================
+# KNOWLEDGE GRAPH / DOCUMENTS
+# ============================================================
 
 def build_knowledge_graph():
     return KnowledgeGraph(
@@ -263,23 +409,29 @@ def build_documents():
     ]
 
 
-def build_components():
-    embedder = FakeEmbedder()
+# ============================================================
+# COMPONENT CONSTRUCTION
+# ============================================================
 
+def build_components(embedder):
     documents = build_documents()
 
     store = FAISSVectorStore(
-        dimension=8,
+        dimension=embedder.dimension,
+    )
+
+    document_embeddings = embedder.encode(
+        documents
     )
 
     store.add(
-        embedder.encode(documents),
+        document_embeddings,
         documents,
     )
 
     kg = build_knowledge_graph()
 
-    return embedder, store, kg
+    return store, kg
 
 
 def build_method(
@@ -323,16 +475,16 @@ def build_method(
     )
 
 
-def make_experiment_question(item, dataset_name):
-    """
-    Convert a frozen dataset record into the question string used by
-    the reasoning methods.
+# ============================================================
+# QUESTION FORMATTING
+# ============================================================
 
-    Context/options are included where available so the experiment
-    receives the actual biomedical question information.
-    """
-
+def make_experiment_question(
+    item,
+    dataset_name,
+):
     if dataset_name == "MedMCQA":
+
         options = "\n".join(
             [
                 f"A. {item['options'][0]}",
@@ -344,20 +496,28 @@ def make_experiment_question(item, dataset_name):
 
         return (
             f"{item['question']}\n\n"
-            f"Options:\n{options}"
+            f"Options:\n{options}\n\n"
+            "Answer"
+
         )
 
     if dataset_name == "PubMedQA":
+
         contexts = item["context"].get(
             "contexts",
             [],
         )
 
-        context_text = "\n".join(contexts)
+        context_text = "\n".join(
+            contexts
+        )
 
         return (
             f"Question: {item['question']}\n\n"
-            f"Context:\n{context_text}"
+            f"Context:\n{context_text}\n\n"
+            "Answer with exactly one of: "
+            "yes, no, or maybe. "
+            "Then briefly explain why."
         )
 
     raise ValueError(
@@ -365,19 +525,26 @@ def make_experiment_question(item, dataset_name):
     )
 
 
+# ============================================================
+# RESULT COUNTERS
+# ============================================================
+
 def count_retrieval_calls(result):
-    """
-    Count retrieval operations from the standardized result structures.
-    """
 
     if "retrieved" in result:
-        return len(result["retrieved"])
+        return len(
+            result["retrieved"]
+        )
 
     if "retrievals" in result:
-        return len(result["retrievals"])
+        return len(
+            result["retrievals"]
+        )
 
     if "thoughts" in result:
-        return len(result["thoughts"])
+        return len(
+            result["thoughts"]
+        )
 
     return 0
 
@@ -391,10 +558,100 @@ def count_reasoning_calls(result):
     )
 
 
-def run_pilot(frozen_questions):
+# ============================================================
+# ANSWER EXTRACTION
+# ============================================================
+
+def extract_medmcqa_answer(text):
+    if not text:
+        return None
+
+    match = re.search(
+        r"\b([ABCD])\b",
+        text.upper(),
+    )
+
+    if match:
+        return match.group(1)
+
+    return None
+
+
+def extract_pubmedqa_answer(text):
+    if not text:
+        return None
+
+    lower = text.lower()
+
+    match = re.search(
+        r"\b(yes|no|maybe)\b",
+        lower,
+    )
+
+    if match:
+        return match.group(1)
+
+    return None
+
+
+def score_answer(
+    dataset_name,
+    item,
+    answer,
+):
+    if dataset_name == "MedMCQA":
+
+        predicted = extract_medmcqa_answer(
+            answer
+        )
+
+        correct = str(
+            item["correct_choice"]
+        ).strip()
+
+        return (
+            predicted,
+            int(
+                predicted is not None
+                and predicted == correct
+            ),
+        )
+
+    if dataset_name == "PubMedQA":
+
+        predicted = extract_pubmedqa_answer(
+            answer
+        )
+
+        correct = str(
+            item["final_decision"]
+        ).strip().lower()
+
+        return (
+            predicted,
+            int(
+                predicted is not None
+                and predicted == correct
+            ),
+        )
+
+    return None, 0
+
+
+# ============================================================
+# REAL-MODEL PILOT
+# ============================================================
+
+def run_pilot(
+    frozen_questions,
+    embedder,
+    llm,
+):
     rows = []
 
-    for dataset_name, questions in frozen_questions.items():
+    for dataset_name, questions in (
+        frozen_questions.items()
+    ):
 
         for item in questions:
 
@@ -409,9 +666,22 @@ def run_pilot(frozen_questions):
 
                 for depth in DEPTHS:
 
-                    embedder, store, kg = build_components()
+                    print()
+                    print(
+                        f"RUNNING | "
+                        f"{dataset_name} | "
+                        f"{question_id} | "
+                        f"{method_name} | "
+                        f"depth={depth}"
+                    )
 
-                    llm = FakeLLM()
+                    # New FAISS store for each experiment.
+                    store, kg = build_components(
+                        embedder
+                    )
+
+                    # New call accounting for each experiment.
+                    llm.calls = []
 
                     method = build_method(
                         method_name=method_name,
@@ -434,62 +704,112 @@ def run_pilot(frozen_questions):
                         - start
                     )
 
-                    retrieval_calls = count_retrieval_calls(
-                        result
+                    retrieval_calls = (
+                        count_retrieval_calls(
+                            result
+                        )
                     )
 
-                    reasoning_calls = count_reasoning_calls(
-                        result
+                    reasoning_calls = (
+                        count_reasoning_calls(
+                            result
+                        )
                     )
 
-                    rows.append(
-                        {
-                            "dataset": dataset_name,
-                            "question_id": question_id,
-                            "question": item["question"],
-                            "method": method_name,
-                            "depth": depth,
-                            "retrieval_calls": retrieval_calls,
-                            "llm_calls": len(llm.calls),
-                            "reasoning_steps": reasoning_calls,
-                            "runtime_seconds": round(
-                                elapsed,
-                                6,
-                            ),
-                            "answer": result.get(
-                                "answer"
-                            ),
-                        }
+                    llm_calls = len(
+                        llm.calls
                     )
+
+                    input_tokens = sum(
+                        call["input_tokens"]
+                        for call in llm.calls
+                    )
+
+                    output_tokens = sum(
+                        call["output_tokens"]
+                        for call in llm.calls
+                    )
+
+                    total_tokens = sum(
+                        call["total_tokens"]
+                        for call in llm.calls
+                    )
+
+                    answer = result.get(
+                        "answer"
+                    )
+
+                    predicted, correct = (
+                        score_answer(
+                            dataset_name,
+                            item,
+                            answer,
+                        )
+                    )
+
+                    row = {
+                        "dataset": dataset_name,
+                        "question_id": question_id,
+                        "question": item["question"],
+                        "method": method_name,
+                        "depth": depth,
+                        "retrieval_calls": retrieval_calls,
+                        "llm_calls": llm_calls,
+                        "reasoning_steps": reasoning_calls,
+                        "input_tokens": input_tokens,
+                        "output_tokens": output_tokens,
+                        "total_tokens": total_tokens,
+                        "runtime_seconds": round(
+                            elapsed,
+                            6,
+                        ),
+                        "predicted_answer": predicted,
+                        "correct_answer": (
+                            item["correct_choice"]
+                            if dataset_name
+                            == "MedMCQA"
+                            else item["final_decision"]
+                        ),
+                        "correct": correct,
+                        "answer": answer,
+                    }
+
+                    rows.append(row)
 
                     print(
                         f"[PASS] "
-                        f"{dataset_name} | "
-                        f"{question_id} | "
-                        f"{method_name} | "
-                        f"depth={depth} | "
                         f"retrievals={retrieval_calls} | "
-                        f"llm={len(llm.calls)}"
+                        f"llm={llm_calls} | "
+                        f"reasoning={reasoning_calls} | "
+                        f"tokens={total_tokens} | "
+                        f"correct={correct} | "
+                        f"time={elapsed:.2f}s"
                     )
+
+    fieldnames = [
+        "dataset",
+        "question_id",
+        "question",
+        "method",
+        "depth",
+        "retrieval_calls",
+        "llm_calls",
+        "reasoning_steps",
+        "input_tokens",
+        "output_tokens",
+        "total_tokens",
+        "runtime_seconds",
+        "predicted_answer",
+        "correct_answer",
+        "correct",
+        "answer",
+    ]
 
     with OUTPUT_FILE.open(
         "w",
         newline="",
         encoding="utf-8",
     ) as f:
-
-        fieldnames = [
-            "dataset",
-            "question_id",
-            "question",
-            "method",
-            "depth",
-            "retrieval_calls",
-            "llm_calls",
-            "reasoning_steps",
-            "runtime_seconds",
-            "answer",
-        ]
 
         writer = csv.DictWriter(
             f,
@@ -502,7 +822,14 @@ def run_pilot(frozen_questions):
     return rows
 
 
-def validate_results(rows, frozen_questions):
+# ============================================================
+# VALIDATION
+# ============================================================
+
+def validate_results(
+    rows,
+    frozen_questions,
+):
     expected_rows = (
         QUESTIONS_PER_DATASET
         * 2
@@ -517,29 +844,27 @@ def validate_results(rows, frozen_questions):
 
     for row in rows:
 
-        expected_depth = int(row["depth"])
+        expected_depth = int(
+            row["depth"]
+        )
 
-        assert int(row["retrieval_calls"]) == expected_depth, (
+        assert int(
+            row["retrieval_calls"]
+        ) == expected_depth, (
             f"Retrieval budget mismatch: {row}"
         )
 
-        assert int(row["llm_calls"]) == expected_depth, (
+    assert int(
+            row["llm_calls"]
+        ) == expected_depth, (
             f"LLM budget mismatch: {row}"
         )
 
-        assert int(row["reasoning_steps"]) == expected_depth, (
-            f"Reasoning-step mismatch: {row}"
+    assert int(
+            row["reasoning_steps"]
+        ) == expected_depth, (
+            f"Reasoning-step budget mismatch: {row}"
         )
-
-    combinations = {
-        (
-            row["dataset"],
-            row["question_id"],
-            row["method"],
-            int(row["depth"]),
-        )
-        for row in rows
-    }
 
     expected_combinations = {
         (
@@ -554,6 +879,16 @@ def validate_results(rows, frozen_questions):
         for depth in DEPTHS
     }
 
+    combinations = {
+        (
+            row["dataset"],
+            row["question_id"],
+            row["method"],
+            int(row["depth"]),
+        )
+        for row in rows
+    }
+
     assert combinations == expected_combinations, (
         "Not all frozen-question/method/depth combinations were executed."
     )
@@ -566,7 +901,6 @@ def main():
 
     frozen_questions = freeze_questions()
 
-    print()
     print(
         f"Frozen MedMCQA questions: "
         f"{len(frozen_questions['MedMCQA'])}"
@@ -578,12 +912,14 @@ def main():
     )
 
     rows = run_pilot(
-        frozen_questions
+        frozen_questions,
+        BioMedBERTEmbedder(),
+        BioMistralLLM(),
     )
 
     validate_results(
         rows,
-        frozen_questions
+        frozen_questions,
     )
 
     print()
@@ -591,54 +927,20 @@ def main():
     print("REAL-QUESTION PILOT PASSED")
     print("=" * 70)
 
-    print(
-        f"Rows written: {len(rows)}"
-    )
-
-    print(
-        f"Frozen questions: {QUESTION_FILE}"
-    )
-
-    print(
-        f"Results file: {OUTPUT_FILE}"
-    )
+    print(f"Rows written: {len(rows)}")
+    print(f"Frozen questions: {QUESTION_FILE}")
+    print(f"Results file: {OUTPUT_FILE}")
 
     print()
-    print(
-        "Verified:"
-    )
-
-    print(
-        "  20 MedMCQA questions"
-    )
-
-    print(
-        "  20 PubMedQA questions"
-    )
-
-    print(
-        "  4 methods"
-    )
-
-    print(
-        "  depths 1, 2, and 3"
-    )
-
-    print(
-        "  depth d -> exactly d retrieval calls"
-    )
-
-    print(
-        "  depth d -> exactly d LLM calls"
-    )
-
-    print(
-        "  depth d -> exactly d reasoning steps"
-    )
-
-    print(
-        "  total expected rows -> 480"
-    )
+    print("Verified:")
+    print(" 20 MedMCQA questions")
+    print(" 20 PubMedQA questions")
+    print(" 4 methods")
+    print(" depths 1, 2, and 3")
+    print(" depth d -> exactly d retrieval calls")
+    print(" depth d -> exactly d LLM calls")
+    print(" depth d -> exactly d reasoning steps")
+    print(" total expected rows -> 480")
 
 
 if __name__ == "__main__":
