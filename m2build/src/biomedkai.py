@@ -188,16 +188,23 @@ class BiomedKAI:
             instruction = (
                 "Reason about the evidence and produce an intermediate "
                 "reasoning result. This result will guide the next "
-                "retrieval and KG expansion step."
+                "retrieval and KG expansion step. "
+                "Do not give a final answer yet."
             )
         else:
             instruction = (
-                "Reason about the evidence and provide the final answer "
-                "to the original biomedical question."
+                "Give the final answer to the original question. "
+                "For MedMCQA, end with exactly "
+                "FINAL_ANSWER: A, FINAL_ANSWER: B, "
+                "FINAL_ANSWER: C, or FINAL_ANSWER: D. "
+                "For PubMedQA, end with exactly "
+                "FINAL_ANSWER: yes, FINAL_ANSWER: no, or "
+                "FINAL_ANSWER: maybe."
             )
 
         return (
-            "You are performing iterative biomedical KG reasoning.\n\n"
+            "You are performing iterative biomedical KG reasoning. "
+            "Follow the requested output format exactly.\n\n"
             f"Original question:\n{question}\n\n"
             f"Current step: {step}/{depth}\n\n"
             f"Retrieved and graph evidence:\n{context}\n\n"

@@ -283,7 +283,13 @@ class HyperGraphRAG:
         else:
             instruction = (
                 "Reason over the hypergraph evidence and provide the "
-                "final answer to the original biomedical question."
+                "final answer to the original biomedical question. "
+                "For MedMCQA, end with exactly "
+                "FINAL_ANSWER: A, FINAL_ANSWER: B, "
+                "FINAL_ANSWER: C, or FINAL_ANSWER: D. "
+                "For PubMedQA, end with exactly "
+                "FINAL_ANSWER: yes, FINAL_ANSWER: no, or "
+                "FINAL_ANSWER: maybe."
             )
 
         return (

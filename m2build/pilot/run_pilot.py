@@ -172,6 +172,92 @@ class BioMistralLLM:
 
     @torch.no_grad()
     def generate(self, prompt, max_new_tokens=64):
+        """
+        One LLM call per reasoning step.
+
+        For the final step, score the permitted answer labels in one
+        batched forward pass and return the highest-scoring label.
+        This avoids relying on instruction-following from the base
+        BioMistral model.
+        """
+        is_final = "FINAL_ANSWER:" in prompt
+
+        if is_final:
+            if "Dataset: MedMCQA" in prompt or "Options:" in prompt:
+                candidates = ["A", "B", "C", "D"]
+            else:
+                candidates = ["yes", "no", "maybe"]
+
+            scoring_prompt = prompt + "\nFINAL_ANSWER:"
+            texts = [
+                scoring_prompt + " " + candidate
+                for candidate in candidates
+            ]
+
+            encoded = self.tokenizer(
+                texts,
+                return_tensors="pt",
+                padding=True,
+                truncation=True,
+                max_length=4096,
+            )
+
+            encoded = {
+                key: value.to(self.model.device)
+                for key, value in encoded.items()
+            }
+
+            outputs = self.model(**encoded)
+            logits = outputs.logits
+            attention = encoded["attention_mask"]
+
+            scores = []
+
+            for i, candidate in enumerate(candidates):
+                length = int(attention[i].sum().item())
+                candidate_ids = self.tokenizer(
+                    " " + candidate,
+                    add_special_tokens=False,
+                )["input_ids"]
+
+                n = len(candidate_ids)
+                start_pos = length - n
+
+                logprob = 0.0
+
+                for j, token_id in enumerate(candidate_ids):
+                    pos = start_pos + j
+                    if pos <= 0:
+                        continue
+
+                    next_logits = logits[i, pos - 1]
+                    log_probs = torch.log_softmax(
+                        next_logits,
+                        dim=-1,
+                    )
+                    logprob += float(
+                        log_probs[int(token_id)].item()
+                    )
+
+                scores.append(logprob)
+
+            best_index = int(np.argmax(scores))
+            answer = f"FINAL_ANSWER: {candidates[best_index]}"
+
+            input_tokens = int(
+                attention.sum(dim=1).max().item()
+            )
+
+            self.calls.append(
+                {
+                    "input_tokens": input_tokens,
+                    "output_tokens": 2,
+                    "total_tokens": input_tokens + 2,
+                }
+            )
+
+            return answer
+
         encoded = self.tokenizer(
             prompt,
             return_tensors="pt",
@@ -179,45 +265,29 @@ class BioMistralLLM:
             max_length=4096,
         )
 
-        input_ids = encoded["input_ids"].to(
-            self.model.device
-        )
+        input_ids = encoded["input_ids"].to(self.model.device)
+        attention_mask = encoded["attention_mask"].to(self.model.device)
 
-        attention_mask = encoded[
-            "attention_mask"
-        ].to(self.model.device)
-
-        input_tokens = int(
-            input_ids.shape[1]
-        )
+        input_tokens = int(input_ids.shape[1])
 
         output_ids = self.model.generate(
-    input_ids=input_ids,
-    attention_mask=attention_mask,
-    max_new_tokens=max_new_tokens,
-    min_new_tokens=8,
-    do_sample=False,
-    pad_token_id=self.tokenizer.eos_token_id,
-)
-
-        generated_ids = output_ids[
-            0,
-            input_tokens:
-        ]
-
-        output_tokens = int(
-            generated_ids.shape[0]
+            input_ids=input_ids,
+            attention_mask=attention_mask,
+            max_new_tokens=max_new_tokens,
+            min_new_tokens=8,
+            do_sample=False,
+            pad_token_id=self.tokenizer.eos_token_id,
         )
+
+        generated_ids = output_ids[0, input_tokens:]
+        output_tokens = int(generated_ids.shape[0])
 
         answer = self.tokenizer.decode(
             generated_ids,
             skip_special_tokens=True,
         ).strip()
 
-        total_tokens = (
-            input_tokens
-            + output_tokens
-        )
+        total_tokens = input_tokens + output_tokens
 
         self.calls.append(
             {
@@ -228,6 +298,7 @@ class BioMistralLLM:
         )
 
         return answer
+
 
 
 # ============================================================
@@ -495,10 +566,10 @@ def make_experiment_question(
         )
 
         return (
+            "Dataset: MedMCQA\n"
             f"{item['question']}\n\n"
             f"Options:\n{options}\n\n"
             "Answer:"
-
         )
 
     if dataset_name == "PubMedQA":
@@ -513,6 +584,7 @@ def make_experiment_question(
         )
 
         return (
+            "Dataset: PubMedQA\n"
             f"Question: {item['question']}\n\n"
             f"Context:\n{context_text}\n\n"
             "Answer with exactly one of: "
@@ -566,13 +638,31 @@ def extract_medmcqa_answer(text):
     if not text:
         return None
 
-    match = re.search(
-        r"\b([ABCD])\b",
-        text.upper(),
-    )
+    text = text.strip().upper()
 
+    # Accept explicit FINAL_ANSWER format.
+    match = re.search(
+        r"FINAL_ANSWER\s*:\s*([ABCD])\b",
+        text,
+    )
     if match:
         return match.group(1)
+
+    # Accept a leading option letter such as "A." or "B)".
+    match = re.search(
+        r"^\s*([ABCD])\s*[\.\):\-]",
+        text,
+    )
+    if match:
+        return match.group(1)
+
+    # Accept numeric MedMCQA choices 1-4.
+    match = re.search(
+        r"FINAL_ANSWER\s*:\s*([1-4])\b",
+        text,
+    )
+    if match:
+        return "ABCD"[int(match.group(1)) - 1]
 
     return None
 
@@ -582,6 +672,20 @@ def extract_pubmedqa_answer(text):
         return None
 
     lower = text.lower()
+
+    match = re.search(
+        r"final_answer\s*:\s*(yes|no|maybe)\b",
+        lower,
+    )
+    if match:
+        return match.group(1)
+
+    match = re.search(
+        r"^\s*(yes|no|maybe)\b",
+        lower,
+    )
+    if match:
+        return match.group(1)
 
     match = re.search(
         r"\b(yes|no|maybe)\b",
@@ -600,22 +704,19 @@ def score_answer(
     answer,
 ):
     if dataset_name == "MedMCQA":
+        predicted = extract_medmcqa_answer(answer)
 
-        predicted = extract_medmcqa_answer(
-            answer
-        )
+        correct_raw = str(item["correct_choice"]).strip()
 
-        correct = str(
-            item["correct_choice"]
-        ).strip()
+        # MedMCQA stores choices as 1,2,3,4.
+        if correct_raw in {"1", "2", "3", "4"}:
+            correct = "ABCD"[int(correct_raw) - 1]
+        else:
+            correct = correct_raw.upper()
 
-        return (
-            predicted,
-            int(
-                predicted is not None
-                and predicted == correct
-            ),
-        )
+        return predicted, int(
+            predicted is not None and predicted == correct
+        ),
 
     if dataset_name == "PubMedQA":
 
@@ -854,13 +955,13 @@ def validate_results(
             f"Retrieval budget mismatch: {row}"
         )
 
-    assert int(
+        assert int(
             row["llm_calls"]
         ) == expected_depth, (
             f"LLM budget mismatch: {row}"
         )
 
-    assert int(
+        assert int(
             row["reasoning_steps"]
         ) == expected_depth, (
             f"Reasoning-step budget mismatch: {row}"
