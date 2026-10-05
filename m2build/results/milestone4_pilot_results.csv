@@ -1,0 +1,529 @@
+dataset,question_id,question,method,depth,retrieval_calls,llm_calls,reasoning_steps,input_tokens,output_tokens,total_tokens,runtime_seconds,predicted_answer,correct_answer,correct,answer
+MedMCQA,45258d3d-b974-44dd-a161-c3fccbdadd88,Which of the following is not true for myelinated nerve fibers:,BiomedKAI,1,1,1,1,330,2,332,2.5655,B,1,0,FINAL_ANSWER: B
+MedMCQA,45258d3d-b974-44dd-a161-c3fccbdadd88,Which of the following is not true for myelinated nerve fibers:,BiomedKAI,2,2,2,2,615,17,632,8.947698,D,1,0,FINAL_ANSWER: D
+MedMCQA,45258d3d-b974-44dd-a161-c3fccbdadd88,Which of the following is not true for myelinated nerve fibers:,BiomedKAI,3,3,3,3,949,40,989,20.218307,D,1,0,FINAL_ANSWER: D
+MedMCQA,45258d3d-b974-44dd-a161-c3fccbdadd88,Which of the following is not true for myelinated nerve fibers:,KRAGEN,1,1,1,1,406,2,408,2.875246,A,1,1,FINAL_ANSWER: A
+MedMCQA,45258d3d-b974-44dd-a161-c3fccbdadd88,Which of the following is not true for myelinated nerve fibers:,KRAGEN,2,2,2,2,864,23,887,13.618486,C,1,0,FINAL_ANSWER: C
+MedMCQA,45258d3d-b974-44dd-a161-c3fccbdadd88,Which of the following is not true for myelinated nerve fibers:,KRAGEN,3,3,3,3,1460,44,1504,24.538821,C,1,0,FINAL_ANSWER: C
+MedMCQA,45258d3d-b974-44dd-a161-c3fccbdadd88,Which of the following is not true for myelinated nerve fibers:,HyperGraphRAG,1,1,1,1,320,2,322,2.139493,A,1,1,FINAL_ANSWER: A
+MedMCQA,45258d3d-b974-44dd-a161-c3fccbdadd88,Which of the following is not true for myelinated nerve fibers:,HyperGraphRAG,2,2,2,2,561,16,577,8.59051,A,1,1,FINAL_ANSWER: A
+MedMCQA,45258d3d-b974-44dd-a161-c3fccbdadd88,Which of the following is not true for myelinated nerve fibers:,HyperGraphRAG,3,3,3,3,820,30,850,15.17651,A,1,1,FINAL_ANSWER: A
+MedMCQA,45258d3d-b974-44dd-a161-c3fccbdadd88,Which of the following is not true for myelinated nerve fibers:,FlatControl,1,1,1,1,433,2,435,2.9817,A,1,1,FINAL_ANSWER: A
+MedMCQA,45258d3d-b974-44dd-a161-c3fccbdadd88,Which of the following is not true for myelinated nerve fibers:,FlatControl,2,2,2,2,809,15,824,9.331547,A,1,1,FINAL_ANSWER: A
+MedMCQA,45258d3d-b974-44dd-a161-c3fccbdadd88,Which of the following is not true for myelinated nerve fibers:,FlatControl,3,3,3,3,1213,35,1248,18.638147,A,1,1,FINAL_ANSWER: A
+MedMCQA,b944ada9-d776-4c2a-9180-3ae5f393f72d,Which of the following is not true about glomerular capillaries'),BiomedKAI,1,1,1,1,353,2,355,2.464668,A,1,1,FINAL_ANSWER: A
+MedMCQA,b944ada9-d776-4c2a-9180-3ae5f393f72d,Which of the following is not true about glomerular capillaries'),BiomedKAI,2,2,2,2,665,20,685,10.608812,D,1,0,FINAL_ANSWER: D
+MedMCQA,b944ada9-d776-4c2a-9180-3ae5f393f72d,Which of the following is not true about glomerular capillaries'),BiomedKAI,3,3,3,3,1006,31,1037,15.704826,D,1,0,FINAL_ANSWER: D
+MedMCQA,b944ada9-d776-4c2a-9180-3ae5f393f72d,Which of the following is not true about glomerular capillaries'),KRAGEN,1,1,1,1,430,2,432,2.99628,A,1,1,FINAL_ANSWER: A
+MedMCQA,b944ada9-d776-4c2a-9180-3ae5f393f72d,Which of the following is not true about glomerular capillaries'),KRAGEN,2,2,2,2,920,23,943,13.20519,A,1,1,FINAL_ANSWER: A
+MedMCQA,b944ada9-d776-4c2a-9180-3ae5f393f72d,Which of the following is not true about glomerular capillaries'),KRAGEN,3,3,3,3,1568,44,1612,23.475401,A,1,1,FINAL_ANSWER: A
+MedMCQA,b944ada9-d776-4c2a-9180-3ae5f393f72d,Which of the following is not true about glomerular capillaries'),HyperGraphRAG,1,1,1,1,343,2,345,2.220968,A,1,1,FINAL_ANSWER: A
+MedMCQA,b944ada9-d776-4c2a-9180-3ae5f393f72d,Which of the following is not true about glomerular capillaries'),HyperGraphRAG,2,2,2,2,607,16,623,8.455979,A,1,1,FINAL_ANSWER: A
+MedMCQA,b944ada9-d776-4c2a-9180-3ae5f393f72d,Which of the following is not true about glomerular capillaries'),HyperGraphRAG,3,3,3,3,889,30,919,14.599669,A,1,1,FINAL_ANSWER: A
+MedMCQA,b944ada9-d776-4c2a-9180-3ae5f393f72d,Which of the following is not true about glomerular capillaries'),FlatControl,1,1,1,1,480,2,482,3.242632,A,1,1,FINAL_ANSWER: A
+MedMCQA,b944ada9-d776-4c2a-9180-3ae5f393f72d,Which of the following is not true about glomerular capillaries'),FlatControl,2,2,2,2,899,14,913,8.957097,A,1,1,FINAL_ANSWER: A
+MedMCQA,b944ada9-d776-4c2a-9180-3ae5f393f72d,Which of the following is not true about glomerular capillaries'),FlatControl,3,3,3,3,1332,25,1357,14.395271,A,1,1,FINAL_ANSWER: A
+MedMCQA,b64a9cd7-d076-4c55-8be1-f9c44fece6cc,A 29 yrs old woman with a pregnancy of 17 week has a 10 years old boy with down syndrome. She does not want another down syndrome kid; best advice to her is,BiomedKAI,1,1,1,1,372,2,374,2.448064,D,3,0,FINAL_ANSWER: D
+MedMCQA,b64a9cd7-d076-4c55-8be1-f9c44fece6cc,A 29 yrs old woman with a pregnancy of 17 week has a 10 years old boy with down syndrome. She does not want another down syndrome kid; best advice to her is,BiomedKAI,2,2,2,2,703,20,723,10.6717,C,3,1,FINAL_ANSWER: C
+MedMCQA,b64a9cd7-d076-4c55-8be1-f9c44fece6cc,A 29 yrs old woman with a pregnancy of 17 week has a 10 years old boy with down syndrome. She does not want another down syndrome kid; best advice to her is,BiomedKAI,3,3,3,3,1052,26,1078,13.665773,D,3,0,FINAL_ANSWER: D
+MedMCQA,b64a9cd7-d076-4c55-8be1-f9c44fece6cc,A 29 yrs old woman with a pregnancy of 17 week has a 10 years old boy with down syndrome. She does not want another down syndrome kid; best advice to her is,KRAGEN,1,1,1,1,460,2,462,3.265189,D,3,0,FINAL_ANSWER: D
+MedMCQA,b64a9cd7-d076-4c55-8be1-f9c44fece6cc,A 29 yrs old woman with a pregnancy of 17 week has a 10 years old boy with down syndrome. She does not want another down syndrome kid; best advice to her is,KRAGEN,2,2,2,2,973,22,995,13.015207,D,3,0,FINAL_ANSWER: D
+MedMCQA,b64a9cd7-d076-4c55-8be1-f9c44fece6cc,A 29 yrs old woman with a pregnancy of 17 week has a 10 years old boy with down syndrome. She does not want another down syndrome kid; best advice to her is,KRAGEN,3,3,3,3,1629,42,1671,49.780822,D,3,0,FINAL_ANSWER: D
+MedMCQA,b64a9cd7-d076-4c55-8be1-f9c44fece6cc,A 29 yrs old woman with a pregnancy of 17 week has a 10 years old boy with down syndrome. She does not want another down syndrome kid; best advice to her is,HyperGraphRAG,1,1,1,1,362,2,364,3.564594,D,3,0,FINAL_ANSWER: D
+MedMCQA,b64a9cd7-d076-4c55-8be1-f9c44fece6cc,A 29 yrs old woman with a pregnancy of 17 week has a 10 years old boy with down syndrome. She does not want another down syndrome kid; best advice to her is,HyperGraphRAG,2,2,2,2,644,15,659,7.319987,D,3,0,FINAL_ANSWER: D
+MedMCQA,b64a9cd7-d076-4c55-8be1-f9c44fece6cc,A 29 yrs old woman with a pregnancy of 17 week has a 10 years old boy with down syndrome. She does not want another down syndrome kid; best advice to her is,HyperGraphRAG,3,3,3,3,943,28,971,12.528295,D,3,0,FINAL_ANSWER: D
+MedMCQA,b64a9cd7-d076-4c55-8be1-f9c44fece6cc,A 29 yrs old woman with a pregnancy of 17 week has a 10 years old boy with down syndrome. She does not want another down syndrome kid; best advice to her is,FlatControl,1,1,1,1,518,2,520,3.588902,D,3,0,FINAL_ANSWER: D
+MedMCQA,b64a9cd7-d076-4c55-8be1-f9c44fece6cc,A 29 yrs old woman with a pregnancy of 17 week has a 10 years old boy with down syndrome. She does not want another down syndrome kid; best advice to her is,FlatControl,2,2,2,2,983,18,1001,10.016386,D,3,0,FINAL_ANSWER: D
+MedMCQA,b64a9cd7-d076-4c55-8be1-f9c44fece6cc,A 29 yrs old woman with a pregnancy of 17 week has a 10 years old boy with down syndrome. She does not want another down syndrome kid; best advice to her is,FlatControl,3,3,3,3,1468,34,1502,16.326682,D,3,0,FINAL_ANSWER: D
+MedMCQA,c6365cce-507c-40f6-90a2-46b867f47b6e,Axonal transport is:,BiomedKAI,1,1,1,1,277,2,279,1.773667,C,3,1,FINAL_ANSWER: C
+MedMCQA,c6365cce-507c-40f6-90a2-46b867f47b6e,Axonal transport is:,BiomedKAI,2,2,2,2,513,20,533,8.22999,A,3,0,FINAL_ANSWER: A
+MedMCQA,c6365cce-507c-40f6-90a2-46b867f47b6e,Axonal transport is:,BiomedKAI,3,3,3,3,785,38,823,14.704183,A,3,0,FINAL_ANSWER: A
+MedMCQA,c6365cce-507c-40f6-90a2-46b867f47b6e,Axonal transport is:,KRAGEN,1,1,1,1,333,2,335,2.115563,A,3,0,FINAL_ANSWER: A
+MedMCQA,c6365cce-507c-40f6-90a2-46b867f47b6e,Axonal transport is:,KRAGEN,2,2,2,2,698,33,731,13.842729,A,3,0,FINAL_ANSWER: A
+MedMCQA,c6365cce-507c-40f6-90a2-46b867f47b6e,Axonal transport is:,KRAGEN,3,3,3,3,1193,64,1257,25.805474,A,3,0,FINAL_ANSWER: A
+MedMCQA,c6365cce-507c-40f6-90a2-46b867f47b6e,Axonal transport is:,HyperGraphRAG,1,1,1,1,267,2,269,1.815399,A,3,0,FINAL_ANSWER: A
+MedMCQA,c6365cce-507c-40f6-90a2-46b867f47b6e,Axonal transport is:,HyperGraphRAG,2,2,2,2,453,14,467,6.052362,A,3,0,FINAL_ANSWER: A
+MedMCQA,c6365cce-507c-40f6-90a2-46b867f47b6e,Axonal transport is:,HyperGraphRAG,3,3,3,3,665,33,698,12.835001,A,3,0,FINAL_ANSWER: A
+MedMCQA,c6365cce-507c-40f6-90a2-46b867f47b6e,Axonal transport is:,FlatControl,1,1,1,1,325,2,327,2.09153,A,3,0,FINAL_ANSWER: A
+MedMCQA,c6365cce-507c-40f6-90a2-46b867f47b6e,Axonal transport is:,FlatControl,2,2,2,2,589,14,603,6.644079,A,3,0,FINAL_ANSWER: A
+MedMCQA,c6365cce-507c-40f6-90a2-46b867f47b6e,Axonal transport is:,FlatControl,3,3,3,3,869,26,895,11.092954,A,3,0,FINAL_ANSWER: A
+MedMCQA,72c1c5e0-b64f-4eef-bf22-ecfb60c5c19c,Low insulin to glucagon ratio is seen in all of these except:,BiomedKAI,1,1,1,1,293,2,295,1.955988,B,1,0,FINAL_ANSWER: B
+MedMCQA,72c1c5e0-b64f-4eef-bf22-ecfb60c5c19c,Low insulin to glucagon ratio is seen in all of these except:,BiomedKAI,2,2,2,2,544,17,561,7.324834,B,1,0,FINAL_ANSWER: B
+MedMCQA,72c1c5e0-b64f-4eef-bf22-ecfb60c5c19c,Low insulin to glucagon ratio is seen in all of these except:,BiomedKAI,3,3,3,3,825,29,854,11.894449,D,1,0,FINAL_ANSWER: D
+MedMCQA,72c1c5e0-b64f-4eef-bf22-ecfb60c5c19c,Low insulin to glucagon ratio is seen in all of these except:,KRAGEN,1,1,1,1,371,2,373,2.388125,A,1,1,FINAL_ANSWER: A
+MedMCQA,72c1c5e0-b64f-4eef-bf22-ecfb60c5c19c,Low insulin to glucagon ratio is seen in all of these except:,KRAGEN,2,2,2,2,765,16,781,8.419095,B,1,0,FINAL_ANSWER: B
+MedMCQA,72c1c5e0-b64f-4eef-bf22-ecfb60c5c19c,Low insulin to glucagon ratio is seen in all of these except:,KRAGEN,3,3,3,3,1278,30,1308,14.642363,C,1,0,FINAL_ANSWER: C
+MedMCQA,72c1c5e0-b64f-4eef-bf22-ecfb60c5c19c,Low insulin to glucagon ratio is seen in all of these except:,HyperGraphRAG,1,1,1,1,283,2,285,1.809033,A,1,1,FINAL_ANSWER: A
+MedMCQA,72c1c5e0-b64f-4eef-bf22-ecfb60c5c19c,Low insulin to glucagon ratio is seen in all of these except:,HyperGraphRAG,2,2,2,2,490,17,507,7.226974,A,1,1,FINAL_ANSWER: A
+MedMCQA,72c1c5e0-b64f-4eef-bf22-ecfb60c5c19c,Low insulin to glucagon ratio is seen in all of these except:,HyperGraphRAG,3,3,3,3,706,28,734,11.1247,A,1,1,FINAL_ANSWER: A
+MedMCQA,72c1c5e0-b64f-4eef-bf22-ecfb60c5c19c,Low insulin to glucagon ratio is seen in all of these except:,FlatControl,1,1,1,1,359,2,361,2.410659,A,1,1,FINAL_ANSWER: A
+MedMCQA,72c1c5e0-b64f-4eef-bf22-ecfb60c5c19c,Low insulin to glucagon ratio is seen in all of these except:,FlatControl,2,2,2,2,660,15,675,7.559611,A,1,1,FINAL_ANSWER: A
+MedMCQA,72c1c5e0-b64f-4eef-bf22-ecfb60c5c19c,Low insulin to glucagon ratio is seen in all of these except:,FlatControl,3,3,3,3,978,28,1006,12.399205,A,1,1,FINAL_ANSWER: A
+MedMCQA,17360c6c-2c98-4fe2-aa85-487dcf4678df,Concentration of tropicamide:,BiomedKAI,1,1,1,1,288,2,290,1.827191,C,1,0,FINAL_ANSWER: C
+MedMCQA,17360c6c-2c98-4fe2-aa85-487dcf4678df,Concentration of tropicamide:,BiomedKAI,2,2,2,2,534,20,554,8.296593,C,1,0,FINAL_ANSWER: C
+MedMCQA,17360c6c-2c98-4fe2-aa85-487dcf4678df,Concentration of tropicamide:,BiomedKAI,3,3,3,3,808,29,837,11.65548,D,1,0,FINAL_ANSWER: D
+MedMCQA,17360c6c-2c98-4fe2-aa85-487dcf4678df,Concentration of tropicamide:,KRAGEN,1,1,1,1,352,2,354,2.165164,A,1,1,FINAL_ANSWER: A
+MedMCQA,17360c6c-2c98-4fe2-aa85-487dcf4678df,Concentration of tropicamide:,KRAGEN,2,2,2,2,730,33,763,14.06793,A,1,1,FINAL_ANSWER: A
+MedMCQA,17360c6c-2c98-4fe2-aa85-487dcf4678df,Concentration of tropicamide:,KRAGEN,3,3,3,3,1193,30,1223,14.320778,D,1,0,FINAL_ANSWER: D
+MedMCQA,17360c6c-2c98-4fe2-aa85-487dcf4678df,Concentration of tropicamide:,HyperGraphRAG,1,1,1,1,278,2,280,1.794971,C,1,0,FINAL_ANSWER: C
+MedMCQA,17360c6c-2c98-4fe2-aa85-487dcf4678df,Concentration of tropicamide:,HyperGraphRAG,2,2,2,2,477,17,494,7.235839,C,1,0,FINAL_ANSWER: C
+MedMCQA,17360c6c-2c98-4fe2-aa85-487dcf4678df,Concentration of tropicamide:,HyperGraphRAG,3,3,3,3,689,28,717,11.202346,C,1,0,FINAL_ANSWER: C
+MedMCQA,17360c6c-2c98-4fe2-aa85-487dcf4678df,Concentration of tropicamide:,FlatControl,1,1,1,1,347,2,349,2.153265,D,1,0,FINAL_ANSWER: D
+MedMCQA,17360c6c-2c98-4fe2-aa85-487dcf4678df,Concentration of tropicamide:,FlatControl,2,2,2,2,632,14,646,6.671364,C,1,0,FINAL_ANSWER: C
+MedMCQA,17360c6c-2c98-4fe2-aa85-487dcf4678df,Concentration of tropicamide:,FlatControl,3,3,3,3,935,27,962,11.822092,D,1,0,FINAL_ANSWER: D
+MedMCQA,62fa6f78-1964-4249-974b-6fcbbd7fc9ba,Which of the following statements is true regarding H I N1 Influenza?,BiomedKAI,1,1,1,1,329,2,331,2.10405,D,1,0,FINAL_ANSWER: D
+MedMCQA,62fa6f78-1964-4249-974b-6fcbbd7fc9ba,Which of the following statements is true regarding H I N1 Influenza?,BiomedKAI,2,2,2,2,610,13,623,6.31706,D,1,0,FINAL_ANSWER: D
+MedMCQA,62fa6f78-1964-4249-974b-6fcbbd7fc9ba,Which of the following statements is true regarding H I N1 Influenza?,BiomedKAI,3,3,3,3,915,20,935,9.116199,D,1,0,FINAL_ANSWER: D
+MedMCQA,62fa6f78-1964-4249-974b-6fcbbd7fc9ba,Which of the following statements is true regarding H I N1 Influenza?,KRAGEN,1,1,1,1,394,2,396,2.737781,A,1,1,FINAL_ANSWER: A
+MedMCQA,62fa6f78-1964-4249-974b-6fcbbd7fc9ba,Which of the following statements is true regarding H I N1 Influenza?,KRAGEN,2,2,2,2,803,16,819,8.466811,A,1,1,FINAL_ANSWER: A
+MedMCQA,62fa6f78-1964-4249-974b-6fcbbd7fc9ba,Which of the following statements is true regarding H I N1 Influenza?,KRAGEN,3,3,3,3,1369,30,1399,15.194934,D,1,0,FINAL_ANSWER: D
+MedMCQA,62fa6f78-1964-4249-974b-6fcbbd7fc9ba,Which of the following statements is true regarding H I N1 Influenza?,HyperGraphRAG,1,1,1,1,319,2,321,2.027515,A,1,1,FINAL_ANSWER: A
+MedMCQA,62fa6f78-1964-4249-974b-6fcbbd7fc9ba,Which of the following statements is true regarding H I N1 Influenza?,HyperGraphRAG,2,2,2,2,560,17,577,7.347443,B,1,0,FINAL_ANSWER: B
+MedMCQA,62fa6f78-1964-4249-974b-6fcbbd7fc9ba,Which of the following statements is true regarding H I N1 Influenza?,HyperGraphRAG,3,3,3,3,825,37,862,14.638384,A,1,1,FINAL_ANSWER: A
+MedMCQA,62fa6f78-1964-4249-974b-6fcbbd7fc9ba,Which of the following statements is true regarding H I N1 Influenza?,FlatControl,1,1,1,1,430,2,432,2.905606,A,1,1,FINAL_ANSWER: A
+MedMCQA,62fa6f78-1964-4249-974b-6fcbbd7fc9ba,Which of the following statements is true regarding H I N1 Influenza?,FlatControl,2,2,2,2,799,14,813,7.633786,A,1,1,FINAL_ANSWER: A
+MedMCQA,62fa6f78-1964-4249-974b-6fcbbd7fc9ba,Which of the following statements is true regarding H I N1 Influenza?,FlatControl,3,3,3,3,1184,26,1210,12.095897,D,1,0,FINAL_ANSWER: D
+MedMCQA,ce49098b-cc48-4168-859e-936e3e0c7459,Which of the following are not a branch of external carotid Aery in Kiesselbach's plexus.,BiomedKAI,1,1,1,1,316,2,318,2.02548,A,2,0,FINAL_ANSWER: A
+MedMCQA,ce49098b-cc48-4168-859e-936e3e0c7459,Which of the following are not a branch of external carotid Aery in Kiesselbach's plexus.,BiomedKAI,2,2,2,2,592,21,613,8.739778,A,2,0,FINAL_ANSWER: A
+MedMCQA,ce49098b-cc48-4168-859e-936e3e0c7459,Which of the following are not a branch of external carotid Aery in Kiesselbach's plexus.,BiomedKAI,3,3,3,3,893,29,922,12.101641,A,2,0,FINAL_ANSWER: A
+MedMCQA,ce49098b-cc48-4168-859e-936e3e0c7459,Which of the following are not a branch of external carotid Aery in Kiesselbach's plexus.,KRAGEN,1,1,1,1,398,2,400,2.744601,A,2,0,FINAL_ANSWER: A
+MedMCQA,ce49098b-cc48-4168-859e-936e3e0c7459,Which of the following are not a branch of external carotid Aery in Kiesselbach's plexus.,KRAGEN,2,2,2,2,812,17,829,8.822918,A,2,0,FINAL_ANSWER: A
+MedMCQA,ce49098b-cc48-4168-859e-936e3e0c7459,Which of the following are not a branch of external carotid Aery in Kiesselbach's plexus.,KRAGEN,3,3,3,3,1352,32,1384,15.575702,A,2,0,FINAL_ANSWER: A
+MedMCQA,ce49098b-cc48-4168-859e-936e3e0c7459,Which of the following are not a branch of external carotid Aery in Kiesselbach's plexus.,HyperGraphRAG,1,1,1,1,306,2,308,1.972932,A,2,0,FINAL_ANSWER: A
+MedMCQA,ce49098b-cc48-4168-859e-936e3e0c7459,Which of the following are not a branch of external carotid Aery in Kiesselbach's plexus.,HyperGraphRAG,2,2,2,2,533,16,549,6.943825,A,2,0,FINAL_ANSWER: A
+MedMCQA,ce49098b-cc48-4168-859e-936e3e0c7459,Which of the following are not a branch of external carotid Aery in Kiesselbach's plexus.,HyperGraphRAG,3,3,3,3,778,30,808,11.908763,A,2,0,FINAL_ANSWER: A
+MedMCQA,ce49098b-cc48-4168-859e-936e3e0c7459,Which of the following are not a branch of external carotid Aery in Kiesselbach's plexus.,FlatControl,1,1,1,1,403,2,405,2.732207,A,2,0,FINAL_ANSWER: A
+MedMCQA,ce49098b-cc48-4168-859e-936e3e0c7459,Which of the following are not a branch of external carotid Aery in Kiesselbach's plexus.,FlatControl,2,2,2,2,760,22,782,10.352977,A,2,0,FINAL_ANSWER: A
+MedMCQA,ce49098b-cc48-4168-859e-936e3e0c7459,Which of the following are not a branch of external carotid Aery in Kiesselbach's plexus.,FlatControl,3,3,3,3,1141,42,1183,17.618114,A,2,0,FINAL_ANSWER: A
+MedMCQA,18d5c4a1-cb81-41a8-9bfc-b6f7dec431d2,Diagnosis of the following ECG-,BiomedKAI,1,1,1,1,286,2,288,1.824664,D,2,0,FINAL_ANSWER: D
+MedMCQA,18d5c4a1-cb81-41a8-9bfc-b6f7dec431d2,Diagnosis of the following ECG-,BiomedKAI,2,2,2,2,531,20,551,8.305806,D,2,0,FINAL_ANSWER: D
+MedMCQA,18d5c4a1-cb81-41a8-9bfc-b6f7dec431d2,Diagnosis of the following ECG-,BiomedKAI,3,3,3,3,805,31,836,12.327013,D,2,0,FINAL_ANSWER: D
+MedMCQA,18d5c4a1-cb81-41a8-9bfc-b6f7dec431d2,Diagnosis of the following ECG-,KRAGEN,1,1,1,1,348,2,350,2.153125,A,2,0,FINAL_ANSWER: A
+MedMCQA,18d5c4a1-cb81-41a8-9bfc-b6f7dec431d2,Diagnosis of the following ECG-,KRAGEN,2,2,2,2,719,16,735,8.128689,B,2,1,FINAL_ANSWER: B
+MedMCQA,18d5c4a1-cb81-41a8-9bfc-b6f7dec431d2,Diagnosis of the following ECG-,KRAGEN,3,3,3,3,1207,30,1237,14.172401,D,2,0,FINAL_ANSWER: D
+MedMCQA,18d5c4a1-cb81-41a8-9bfc-b6f7dec431d2,Diagnosis of the following ECG-,HyperGraphRAG,1,1,1,1,276,2,278,1.764424,A,2,0,FINAL_ANSWER: A
+MedMCQA,18d5c4a1-cb81-41a8-9bfc-b6f7dec431d2,Diagnosis of the following ECG-,HyperGraphRAG,2,2,2,2,474,17,491,7.193605,D,2,0,FINAL_ANSWER: D
+MedMCQA,18d5c4a1-cb81-41a8-9bfc-b6f7dec431d2,Diagnosis of the following ECG-,HyperGraphRAG,3,3,3,3,685,26,711,10.442937,D,2,0,FINAL_ANSWER: D
+MedMCQA,18d5c4a1-cb81-41a8-9bfc-b6f7dec431d2,Diagnosis of the following ECG-,FlatControl,1,1,1,1,343,2,345,2.157013,A,2,0,FINAL_ANSWER: A
+MedMCQA,18d5c4a1-cb81-41a8-9bfc-b6f7dec431d2,Diagnosis of the following ECG-,FlatControl,2,2,2,2,625,14,639,6.651272,D,2,0,FINAL_ANSWER: D
+MedMCQA,18d5c4a1-cb81-41a8-9bfc-b6f7dec431d2,Diagnosis of the following ECG-,FlatControl,3,3,3,3,923,26,949,11.429825,D,2,0,FINAL_ANSWER: D
+MedMCQA,de09d388-bd4e-42a9-ac6b-ee2d95f822e2,A blue new born presents with cyanosis. The X–ray chest reveal oligaemic lung field and normal sized heart. Most likely diagnosis is –,BiomedKAI,1,1,1,1,316,2,318,2.028606,D,2,0,FINAL_ANSWER: D
+MedMCQA,de09d388-bd4e-42a9-ac6b-ee2d95f822e2,A blue new born presents with cyanosis. The X–ray chest reveal oligaemic lung field and normal sized heart. Most likely diagnosis is –,BiomedKAI,2,2,2,2,631,62,693,23.255494,A,2,0,FINAL_ANSWER: A
+MedMCQA,de09d388-bd4e-42a9-ac6b-ee2d95f822e2,A blue new born presents with cyanosis. The X–ray chest reveal oligaemic lung field and normal sized heart. Most likely diagnosis is –,BiomedKAI,3,3,3,3,926,54,980,20.93818,D,2,0,FINAL_ANSWER: D
+MedMCQA,de09d388-bd4e-42a9-ac6b-ee2d95f822e2,A blue new born presents with cyanosis. The X–ray chest reveal oligaemic lung field and normal sized heart. Most likely diagnosis is –,KRAGEN,1,1,1,1,367,2,369,2.457002,A,2,0,FINAL_ANSWER: A
+MedMCQA,de09d388-bd4e-42a9-ac6b-ee2d95f822e2,A blue new born presents with cyanosis. The X–ray chest reveal oligaemic lung field and normal sized heart. Most likely diagnosis is –,KRAGEN,2,2,2,2,773,16,789,8.481697,D,2,0,FINAL_ANSWER: D
+MedMCQA,de09d388-bd4e-42a9-ac6b-ee2d95f822e2,A blue new born presents with cyanosis. The X–ray chest reveal oligaemic lung field and normal sized heart. Most likely diagnosis is –,KRAGEN,3,3,3,3,1306,30,1336,14.848258,D,2,0,FINAL_ANSWER: D
+MedMCQA,de09d388-bd4e-42a9-ac6b-ee2d95f822e2,A blue new born presents with cyanosis. The X–ray chest reveal oligaemic lung field and normal sized heart. Most likely diagnosis is –,HyperGraphRAG,1,1,1,1,306,2,308,1.974989,D,2,0,FINAL_ANSWER: D
+MedMCQA,de09d388-bd4e-42a9-ac6b-ee2d95f822e2,A blue new born presents with cyanosis. The X–ray chest reveal oligaemic lung field and normal sized heart. Most likely diagnosis is –,HyperGraphRAG,2,2,2,2,537,20,557,8.34048,D,2,0,FINAL_ANSWER: D
+MedMCQA,de09d388-bd4e-42a9-ac6b-ee2d95f822e2,A blue new born presents with cyanosis. The X–ray chest reveal oligaemic lung field and normal sized heart. Most likely diagnosis is –,HyperGraphRAG,3,3,3,3,784,32,816,12.608208,D,2,0,FINAL_ANSWER: D
+MedMCQA,de09d388-bd4e-42a9-ac6b-ee2d95f822e2,A blue new born presents with cyanosis. The X–ray chest reveal oligaemic lung field and normal sized heart. Most likely diagnosis is –,FlatControl,1,1,1,1,404,2,406,2.732948,D,2,0,FINAL_ANSWER: D
+MedMCQA,de09d388-bd4e-42a9-ac6b-ee2d95f822e2,A blue new born presents with cyanosis. The X–ray chest reveal oligaemic lung field and normal sized heart. Most likely diagnosis is –,FlatControl,2,2,2,2,747,14,761,7.367016,D,2,0,FINAL_ANSWER: D
+MedMCQA,de09d388-bd4e-42a9-ac6b-ee2d95f822e2,A blue new born presents with cyanosis. The X–ray chest reveal oligaemic lung field and normal sized heart. Most likely diagnosis is –,FlatControl,3,3,3,3,1102,24,1126,11.238645,A,2,0,FINAL_ANSWER: A
+MedMCQA,384a9281-2ee1-480b-a7d8-fd3ef49558e5,27.	The lateral spread of dental caries is facilitated mostly  by the,BiomedKAI,1,1,1,1,305,2,307,1.985317,B,2,1,FINAL_ANSWER: B
+MedMCQA,384a9281-2ee1-480b-a7d8-fd3ef49558e5,27.	The lateral spread of dental caries is facilitated mostly  by the,BiomedKAI,2,2,2,2,566,17,583,7.339891,B,2,1,FINAL_ANSWER: B
+MedMCQA,384a9281-2ee1-480b-a7d8-fd3ef49558e5,27.	The lateral spread of dental caries is facilitated mostly  by the,BiomedKAI,3,3,3,3,848,24,872,10.406804,B,2,1,FINAL_ANSWER: B
+MedMCQA,384a9281-2ee1-480b-a7d8-fd3ef49558e5,27.	The lateral spread of dental caries is facilitated mostly  by the,KRAGEN,1,1,1,1,341,2,343,2.147592,A,2,0,FINAL_ANSWER: A
+MedMCQA,384a9281-2ee1-480b-a7d8-fd3ef49558e5,27.	The lateral spread of dental caries is facilitated mostly  by the,KRAGEN,2,2,2,2,731,16,747,8.249223,A,2,0,FINAL_ANSWER: A
+MedMCQA,384a9281-2ee1-480b-a7d8-fd3ef49558e5,27.	The lateral spread of dental caries is facilitated mostly  by the,KRAGEN,3,3,3,3,1242,30,1272,14.372069,C,2,0,FINAL_ANSWER: C
+MedMCQA,384a9281-2ee1-480b-a7d8-fd3ef49558e5,27.	The lateral spread of dental caries is facilitated mostly  by the,HyperGraphRAG,1,1,1,1,295,2,297,1.951408,A,2,0,FINAL_ANSWER: A
+MedMCQA,384a9281-2ee1-480b-a7d8-fd3ef49558e5,27.	The lateral spread of dental caries is facilitated mostly  by the,HyperGraphRAG,2,2,2,2,518,23,541,9.261434,B,2,1,FINAL_ANSWER: B
+MedMCQA,384a9281-2ee1-480b-a7d8-fd3ef49558e5,27.	The lateral spread of dental caries is facilitated mostly  by the,HyperGraphRAG,3,3,3,3,766,44,810,16.661065,B,2,1,FINAL_ANSWER: B
+MedMCQA,384a9281-2ee1-480b-a7d8-fd3ef49558e5,27.	The lateral spread of dental caries is facilitated mostly  by the,FlatControl,1,1,1,1,381,2,383,2.412544,A,2,0,FINAL_ANSWER: A
+MedMCQA,384a9281-2ee1-480b-a7d8-fd3ef49558e5,27.	The lateral spread of dental caries is facilitated mostly  by the,FlatControl,2,2,2,2,703,15,718,7.593774,A,2,0,FINAL_ANSWER: A
+MedMCQA,384a9281-2ee1-480b-a7d8-fd3ef49558e5,27.	The lateral spread of dental caries is facilitated mostly  by the,FlatControl,3,3,3,3,1042,28,1070,12.470327,A,2,0,FINAL_ANSWER: A
+MedMCQA,ae860b65-53a5-4547-b627-494174e15c3c,A second-year PG resident tells you to perform an ABG of a patient. All of the following are true about performing an ABG except:,BiomedKAI,1,1,1,1,354,2,356,2.390283,A,1,1,FINAL_ANSWER: A
+MedMCQA,ae860b65-53a5-4547-b627-494174e15c3c,A second-year PG resident tells you to perform an ABG of a patient. All of the following are true about performing an ABG except:,BiomedKAI,2,2,2,2,661,13,674,6.576178,A,1,1,FINAL_ANSWER: A
+MedMCQA,ae860b65-53a5-4547-b627-494174e15c3c,A second-year PG resident tells you to perform an ABG of a patient. All of the following are true about performing an ABG except:,BiomedKAI,3,3,3,3,997,24,1021,11.066108,D,1,0,FINAL_ANSWER: D
+MedMCQA,ae860b65-53a5-4547-b627-494174e15c3c,A second-year PG resident tells you to perform an ABG of a patient. All of the following are true about performing an ABG except:,KRAGEN,1,1,1,1,418,2,420,2.86278,A,1,1,FINAL_ANSWER: A
+MedMCQA,ae860b65-53a5-4547-b627-494174e15c3c,A second-year PG resident tells you to perform an ABG of a patient. All of the following are true about performing an ABG except:,KRAGEN,2,2,2,2,884,20,904,10.312319,A,1,1,FINAL_ANSWER: A
+MedMCQA,ae860b65-53a5-4547-b627-494174e15c3c,A second-year PG resident tells you to perform an ABG of a patient. All of the following are true about performing an ABG except:,KRAGEN,3,3,3,3,1471,30,1501,15.291067,D,1,0,FINAL_ANSWER: D
+MedMCQA,ae860b65-53a5-4547-b627-494174e15c3c,A second-year PG resident tells you to perform an ABG of a patient. All of the following are true about performing an ABG except:,HyperGraphRAG,1,1,1,1,344,2,346,2.144881,A,1,1,FINAL_ANSWER: A
+MedMCQA,ae860b65-53a5-4547-b627-494174e15c3c,A second-year PG resident tells you to perform an ABG of a patient. All of the following are true about performing an ABG except:,HyperGraphRAG,2,2,2,2,610,16,626,7.360342,A,1,1,FINAL_ANSWER: A
+MedMCQA,ae860b65-53a5-4547-b627-494174e15c3c,A second-year PG resident tells you to perform an ABG of a patient. All of the following are true about performing an ABG except:,HyperGraphRAG,3,3,3,3,900,37,937,15.205101,A,1,1,FINAL_ANSWER: A
+MedMCQA,ae860b65-53a5-4547-b627-494174e15c3c,A second-year PG resident tells you to perform an ABG of a patient. All of the following are true about performing an ABG except:,FlatControl,1,1,1,1,480,2,482,3.16015,A,1,1,FINAL_ANSWER: A
+MedMCQA,ae860b65-53a5-4547-b627-494174e15c3c,A second-year PG resident tells you to perform an ABG of a patient. All of the following are true about performing an ABG except:,FlatControl,2,2,2,2,902,15,917,8.680963,A,1,1,FINAL_ANSWER: A
+MedMCQA,ae860b65-53a5-4547-b627-494174e15c3c,A second-year PG resident tells you to perform an ABG of a patient. All of the following are true about performing an ABG except:,FlatControl,3,3,3,3,1341,28,1369,13.682337,A,1,1,FINAL_ANSWER: A
+MedMCQA,84d89a4f-db04-402d-88ab-ca39f6eee8bd,Respiratory rhythm generation center is located at:,BiomedKAI,1,1,1,1,293,2,295,1.936509,D,2,0,FINAL_ANSWER: D
+MedMCQA,84d89a4f-db04-402d-88ab-ca39f6eee8bd,Respiratory rhythm generation center is located at:,BiomedKAI,2,2,2,2,538,11,549,5.268587,D,2,0,FINAL_ANSWER: D
+MedMCQA,84d89a4f-db04-402d-88ab-ca39f6eee8bd,Respiratory rhythm generation center is located at:,BiomedKAI,3,3,3,3,810,20,830,8.564225,D,2,0,FINAL_ANSWER: D
+MedMCQA,84d89a4f-db04-402d-88ab-ca39f6eee8bd,Respiratory rhythm generation center is located at:,KRAGEN,1,1,1,1,361,2,363,2.421811,A,2,0,FINAL_ANSWER: A
+MedMCQA,84d89a4f-db04-402d-88ab-ca39f6eee8bd,Respiratory rhythm generation center is located at:,KRAGEN,2,2,2,2,754,23,777,10.782247,D,2,0,FINAL_ANSWER: D
+MedMCQA,84d89a4f-db04-402d-88ab-ca39f6eee8bd,Respiratory rhythm generation center is located at:,KRAGEN,3,3,3,3,1275,44,1319,19.600587,C,2,0,FINAL_ANSWER: C
+MedMCQA,84d89a4f-db04-402d-88ab-ca39f6eee8bd,Respiratory rhythm generation center is located at:,HyperGraphRAG,1,1,1,1,283,2,285,1.793195,A,2,0,FINAL_ANSWER: A
+MedMCQA,84d89a4f-db04-402d-88ab-ca39f6eee8bd,Respiratory rhythm generation center is located at:,HyperGraphRAG,2,2,2,2,486,15,501,6.546823,D,2,0,FINAL_ANSWER: D
+MedMCQA,84d89a4f-db04-402d-88ab-ca39f6eee8bd,Respiratory rhythm generation center is located at:,HyperGraphRAG,3,3,3,3,706,28,734,11.151496,D,2,0,FINAL_ANSWER: D
+MedMCQA,84d89a4f-db04-402d-88ab-ca39f6eee8bd,Respiratory rhythm generation center is located at:,FlatControl,1,1,1,1,359,2,361,2.414047,D,2,0,FINAL_ANSWER: D
+MedMCQA,84d89a4f-db04-402d-88ab-ca39f6eee8bd,Respiratory rhythm generation center is located at:,FlatControl,2,2,2,2,655,13,668,6.819628,D,2,0,FINAL_ANSWER: D
+MedMCQA,84d89a4f-db04-402d-88ab-ca39f6eee8bd,Respiratory rhythm generation center is located at:,FlatControl,3,3,3,3,1013,42,1055,17.398592,A,2,0,FINAL_ANSWER: A
+MedMCQA,b1cc4ab0-a82c-437a-88c2-00953f3618ff,Gait apraxia is seen in thromboembolic episode involving:,BiomedKAI,1,1,1,1,291,2,293,1.950382,A,1,1,FINAL_ANSWER: A
+MedMCQA,b1cc4ab0-a82c-437a-88c2-00953f3618ff,Gait apraxia is seen in thromboembolic episode involving:,BiomedKAI,2,2,2,2,541,20,561,8.304762,B,1,0,FINAL_ANSWER: B
+MedMCQA,b1cc4ab0-a82c-437a-88c2-00953f3618ff,Gait apraxia is seen in thromboembolic episode involving:,BiomedKAI,3,3,3,3,818,29,847,11.848021,D,1,0,FINAL_ANSWER: D
+MedMCQA,b1cc4ab0-a82c-437a-88c2-00953f3618ff,Gait apraxia is seen in thromboembolic episode involving:,KRAGEN,1,1,1,1,371,2,373,2.393014,A,1,1,FINAL_ANSWER: A
+MedMCQA,b1cc4ab0-a82c-437a-88c2-00953f3618ff,Gait apraxia is seen in thromboembolic episode involving:,KRAGEN,2,2,2,2,773,34,807,14.615781,A,1,1,FINAL_ANSWER: A
+MedMCQA,b1cc4ab0-a82c-437a-88c2-00953f3618ff,Gait apraxia is seen in thromboembolic episode involving:,KRAGEN,3,3,3,3,1304,66,1370,27.215619,C,1,0,FINAL_ANSWER: C
+MedMCQA,b1cc4ab0-a82c-437a-88c2-00953f3618ff,Gait apraxia is seen in thromboembolic episode involving:,HyperGraphRAG,1,1,1,1,281,2,283,1.786226,A,1,1,FINAL_ANSWER: A
+MedMCQA,b1cc4ab0-a82c-437a-88c2-00953f3618ff,Gait apraxia is seen in thromboembolic episode involving:,HyperGraphRAG,2,2,2,2,483,16,499,6.875205,A,1,1,FINAL_ANSWER: A
+MedMCQA,b1cc4ab0-a82c-437a-88c2-00953f3618ff,Gait apraxia is seen in thromboembolic episode involving:,HyperGraphRAG,3,3,3,3,703,30,733,11.823074,A,1,1,FINAL_ANSWER: A
+MedMCQA,b1cc4ab0-a82c-437a-88c2-00953f3618ff,Gait apraxia is seen in thromboembolic episode involving:,FlatControl,1,1,1,1,353,2,355,2.397832,A,1,1,FINAL_ANSWER: A
+MedMCQA,b1cc4ab0-a82c-437a-88c2-00953f3618ff,Gait apraxia is seen in thromboembolic episode involving:,FlatControl,2,2,2,2,645,14,659,6.876027,A,1,1,FINAL_ANSWER: A
+MedMCQA,b1cc4ab0-a82c-437a-88c2-00953f3618ff,Gait apraxia is seen in thromboembolic episode involving:,FlatControl,3,3,3,3,953,26,979,11.680649,A,1,1,FINAL_ANSWER: A
+MedMCQA,f184a533-98b4-43ad-b1f5-70edc6704d9e,Heavy forces on periodontal ligament causes:,BiomedKAI,1,1,1,1,294,2,296,1.955588,C,1,0,FINAL_ANSWER: C
+MedMCQA,f184a533-98b4-43ad-b1f5-70edc6704d9e,Heavy forces on periodontal ligament causes:,BiomedKAI,2,2,2,2,541,14,555,6.275638,C,1,0,FINAL_ANSWER: C
+MedMCQA,f184a533-98b4-43ad-b1f5-70edc6704d9e,Heavy forces on periodontal ligament causes:,BiomedKAI,3,3,3,3,818,26,844,10.832186,D,1,0,FINAL_ANSWER: D
+MedMCQA,f184a533-98b4-43ad-b1f5-70edc6704d9e,Heavy forces on periodontal ligament causes:,KRAGEN,1,1,1,1,360,2,362,2.420435,A,1,1,FINAL_ANSWER: A
+MedMCQA,f184a533-98b4-43ad-b1f5-70edc6704d9e,Heavy forces on periodontal ligament causes:,KRAGEN,2,2,2,2,748,27,775,12.229637,A,1,1,FINAL_ANSWER: A
+MedMCQA,f184a533-98b4-43ad-b1f5-70edc6704d9e,Heavy forces on periodontal ligament causes:,KRAGEN,3,3,3,3,1265,45,1310,19.902096,A,1,1,FINAL_ANSWER: A
+MedMCQA,f184a533-98b4-43ad-b1f5-70edc6704d9e,Heavy forces on periodontal ligament causes:,HyperGraphRAG,1,1,1,1,284,2,286,1.812372,A,1,1,FINAL_ANSWER: A
+MedMCQA,f184a533-98b4-43ad-b1f5-70edc6704d9e,Heavy forces on periodontal ligament causes:,HyperGraphRAG,2,2,2,2,493,21,514,8.570448,D,1,0,FINAL_ANSWER: D
+MedMCQA,f184a533-98b4-43ad-b1f5-70edc6704d9e,Heavy forces on periodontal ligament causes:,HyperGraphRAG,3,3,3,3,726,40,766,15.27398,D,1,0,FINAL_ANSWER: D
+MedMCQA,f184a533-98b4-43ad-b1f5-70edc6704d9e,Heavy forces on periodontal ligament causes:,FlatControl,1,1,1,1,359,2,361,2.405818,A,1,1,FINAL_ANSWER: A
+MedMCQA,f184a533-98b4-43ad-b1f5-70edc6704d9e,Heavy forces on periodontal ligament causes:,FlatControl,2,2,2,2,657,14,671,7.212495,A,1,1,FINAL_ANSWER: A
+MedMCQA,f184a533-98b4-43ad-b1f5-70edc6704d9e,Heavy forces on periodontal ligament causes:,FlatControl,3,3,3,3,971,26,997,11.749115,A,1,1,FINAL_ANSWER: A
+MedMCQA,26160738-1887-4252-86d4-1719a5a80bd3,"About N. gonorrhoea, all are true except",BiomedKAI,1,1,1,1,317,2,319,2.037195,D,2,0,FINAL_ANSWER: D
+MedMCQA,26160738-1887-4252-86d4-1719a5a80bd3,"About N. gonorrhoea, all are true except",BiomedKAI,2,2,2,2,590,17,607,7.404931,D,2,0,FINAL_ANSWER: D
+MedMCQA,26160738-1887-4252-86d4-1719a5a80bd3,"About N. gonorrhoea, all are true except",BiomedKAI,3,3,3,3,902,38,940,15.627302,D,2,0,FINAL_ANSWER: D
+MedMCQA,26160738-1887-4252-86d4-1719a5a80bd3,"About N. gonorrhoea, all are true except",KRAGEN,1,1,1,1,354,2,356,2.392799,A,2,0,FINAL_ANSWER: A
+MedMCQA,26160738-1887-4252-86d4-1719a5a80bd3,"About N. gonorrhoea, all are true except",KRAGEN,2,2,2,2,747,16,763,8.37199,D,2,0,FINAL_ANSWER: D
+MedMCQA,26160738-1887-4252-86d4-1719a5a80bd3,"About N. gonorrhoea, all are true except",KRAGEN,3,3,3,3,1271,30,1301,14.787829,D,2,0,FINAL_ANSWER: D
+MedMCQA,26160738-1887-4252-86d4-1719a5a80bd3,"About N. gonorrhoea, all are true except",HyperGraphRAG,1,1,1,1,307,2,309,1.97607,D,2,0,FINAL_ANSWER: D
+MedMCQA,26160738-1887-4252-86d4-1719a5a80bd3,"About N. gonorrhoea, all are true except",HyperGraphRAG,2,2,2,2,535,16,551,6.963516,A,2,0,FINAL_ANSWER: A
+MedMCQA,26160738-1887-4252-86d4-1719a5a80bd3,"About N. gonorrhoea, all are true except",HyperGraphRAG,3,3,3,3,781,30,811,11.945842,D,2,0,FINAL_ANSWER: D
+MedMCQA,26160738-1887-4252-86d4-1719a5a80bd3,"About N. gonorrhoea, all are true except",FlatControl,1,1,1,1,406,2,408,2.741457,A,2,0,FINAL_ANSWER: A
+MedMCQA,26160738-1887-4252-86d4-1719a5a80bd3,"About N. gonorrhoea, all are true except",FlatControl,2,2,2,2,751,14,765,7.3874,A,2,0,FINAL_ANSWER: A
+MedMCQA,26160738-1887-4252-86d4-1719a5a80bd3,"About N. gonorrhoea, all are true except",FlatControl,3,3,3,3,1112,26,1138,12.143514,A,2,0,FINAL_ANSWER: A
+MedMCQA,6ccd8adb-af24-4e58-82a1-9219dfa37057,"A patient who was on ventilator and being ventilated for past few days, suddenly pulls out the endotracheal tube. What is the next step of management?",BiomedKAI,1,1,1,1,337,2,339,2.138731,A,1,1,FINAL_ANSWER: A
+MedMCQA,6ccd8adb-af24-4e58-82a1-9219dfa37057,"A patient who was on ventilator and being ventilated for past few days, suddenly pulls out the endotracheal tube. What is the next step of management?",BiomedKAI,2,2,2,2,633,20,653,8.8951,A,1,1,FINAL_ANSWER: A
+MedMCQA,6ccd8adb-af24-4e58-82a1-9219dfa37057,"A patient who was on ventilator and being ventilated for past few days, suddenly pulls out the endotracheal tube. What is the next step of management?",BiomedKAI,3,3,3,3,965,38,1003,15.800951,A,1,1,FINAL_ANSWER: A
+MedMCQA,6ccd8adb-af24-4e58-82a1-9219dfa37057,"A patient who was on ventilator and being ventilated for past few days, suddenly pulls out the endotracheal tube. What is the next step of management?",KRAGEN,1,1,1,1,425,2,427,2.89795,A,1,1,FINAL_ANSWER: A
+MedMCQA,6ccd8adb-af24-4e58-82a1-9219dfa37057,"A patient who was on ventilator and being ventilated for past few days, suddenly pulls out the endotracheal tube. What is the next step of management?",KRAGEN,2,2,2,2,874,19,893,9.813428,A,1,1,FINAL_ANSWER: A
+MedMCQA,6ccd8adb-af24-4e58-82a1-9219dfa37057,"A patient who was on ventilator and being ventilated for past few days, suddenly pulls out the endotracheal tube. What is the next step of management?",KRAGEN,3,3,3,3,1451,44,1495,20.052602,A,1,1,FINAL_ANSWER: A
+MedMCQA,6ccd8adb-af24-4e58-82a1-9219dfa37057,"A patient who was on ventilator and being ventilated for past few days, suddenly pulls out the endotracheal tube. What is the next step of management?",HyperGraphRAG,1,1,1,1,327,2,329,2.072677,A,1,1,FINAL_ANSWER: A
+MedMCQA,6ccd8adb-af24-4e58-82a1-9219dfa37057,"A patient who was on ventilator and being ventilated for past few days, suddenly pulls out the endotracheal tube. What is the next step of management?",HyperGraphRAG,2,2,2,2,574,15,589,6.713201,A,1,1,FINAL_ANSWER: A
+MedMCQA,6ccd8adb-af24-4e58-82a1-9219dfa37057,"A patient who was on ventilator and being ventilated for past few days, suddenly pulls out the endotracheal tube. What is the next step of management?",HyperGraphRAG,3,3,3,3,838,28,866,11.562714,A,1,1,FINAL_ANSWER: A
+MedMCQA,6ccd8adb-af24-4e58-82a1-9219dfa37057,"A patient who was on ventilator and being ventilated for past few days, suddenly pulls out the endotracheal tube. What is the next step of management?",FlatControl,1,1,1,1,446,2,448,2.927045,A,1,1,FINAL_ANSWER: A
+MedMCQA,6ccd8adb-af24-4e58-82a1-9219dfa37057,"A patient who was on ventilator and being ventilated for past few days, suddenly pulls out the endotracheal tube. What is the next step of management?",FlatControl,2,2,2,2,839,18,857,9.116212,A,1,1,FINAL_ANSWER: A
+MedMCQA,6ccd8adb-af24-4e58-82a1-9219dfa37057,"A patient who was on ventilator and being ventilated for past few days, suddenly pulls out the endotracheal tube. What is the next step of management?",FlatControl,3,3,3,3,1252,34,1286,15.212882,A,1,1,FINAL_ANSWER: A
+MedMCQA,e38402c3-69bf-40a8-90c4-09277ca352eb,"In a	6-month-old child, thick curd like white	patch
+appears on the buccal mucosa. On rubbing it leaves an
+erythematous patch. Most likely diagnosis is:",BiomedKAI,1,1,1,1,324,2,326,2.077562,D,4,1,FINAL_ANSWER: D
+MedMCQA,e38402c3-69bf-40a8-90c4-09277ca352eb,"In a	6-month-old child, thick curd like white	patch
+appears on the buccal mucosa. On rubbing it leaves an
+erythematous patch. Most likely diagnosis is:",BiomedKAI,2,2,2,2,598,11,609,5.383162,D,4,1,FINAL_ANSWER: D
+MedMCQA,e38402c3-69bf-40a8-90c4-09277ca352eb,"In a	6-month-old child, thick curd like white	patch
+appears on the buccal mucosa. On rubbing it leaves an
+erythematous patch. Most likely diagnosis is:",BiomedKAI,3,3,3,3,905,26,931,11.205053,D,4,1,FINAL_ANSWER: D
+MedMCQA,e38402c3-69bf-40a8-90c4-09277ca352eb,"In a	6-month-old child, thick curd like white	patch
+appears on the buccal mucosa. On rubbing it leaves an
+erythematous patch. Most likely diagnosis is:",KRAGEN,1,1,1,1,412,2,414,2.768748,A,4,0,FINAL_ANSWER: A
+MedMCQA,e38402c3-69bf-40a8-90c4-09277ca352eb,"In a	6-month-old child, thick curd like white	patch
+appears on the buccal mucosa. On rubbing it leaves an
+erythematous patch. Most likely diagnosis is:",KRAGEN,2,2,2,2,861,22,883,10.9086,D,4,1,FINAL_ANSWER: D
+MedMCQA,e38402c3-69bf-40a8-90c4-09277ca352eb,"In a	6-month-old child, thick curd like white	patch
+appears on the buccal mucosa. On rubbing it leaves an
+erythematous patch. Most likely diagnosis is:",KRAGEN,3,3,3,3,1444,43,1487,19.777114,D,4,1,FINAL_ANSWER: D
+MedMCQA,e38402c3-69bf-40a8-90c4-09277ca352eb,"In a	6-month-old child, thick curd like white	patch
+appears on the buccal mucosa. On rubbing it leaves an
+erythematous patch. Most likely diagnosis is:",HyperGraphRAG,1,1,1,1,314,2,316,2.011388,D,4,1,FINAL_ANSWER: D
+MedMCQA,e38402c3-69bf-40a8-90c4-09277ca352eb,"In a	6-month-old child, thick curd like white	patch
+appears on the buccal mucosa. On rubbing it leaves an
+erythematous patch. Most likely diagnosis is:",HyperGraphRAG,2,2,2,2,556,23,579,9.337565,D,4,1,FINAL_ANSWER: D
+MedMCQA,e38402c3-69bf-40a8-90c4-09277ca352eb,"In a	6-month-old child, thick curd like white	patch
+appears on the buccal mucosa. On rubbing it leaves an
+erythematous patch. Most likely diagnosis is:",HyperGraphRAG,3,3,3,3,811,32,843,12.951999,D,4,1,FINAL_ANSWER: D
+MedMCQA,e38402c3-69bf-40a8-90c4-09277ca352eb,"In a	6-month-old child, thick curd like white	patch
+appears on the buccal mucosa. On rubbing it leaves an
+erythematous patch. Most likely diagnosis is:",FlatControl,1,1,1,1,420,2,422,2.877541,D,4,1,FINAL_ANSWER: D
+MedMCQA,e38402c3-69bf-40a8-90c4-09277ca352eb,"In a	6-month-old child, thick curd like white	patch
+appears on the buccal mucosa. On rubbing it leaves an
+erythematous patch. Most likely diagnosis is:",FlatControl,2,2,2,2,787,18,805,9.222848,D,4,1,FINAL_ANSWER: D
+MedMCQA,e38402c3-69bf-40a8-90c4-09277ca352eb,"In a	6-month-old child, thick curd like white	patch
+appears on the buccal mucosa. On rubbing it leaves an
+erythematous patch. Most likely diagnosis is:",FlatControl,3,3,3,3,1174,34,1208,15.213848,D,4,1,FINAL_ANSWER: D
+MedMCQA,9078aaca-bbfd-41cd-ad69-03057fca84ba,Characteristic of venous blood flow of lower limb in duplex Doppler is?,BiomedKAI,1,1,1,1,291,2,293,1.946071,C,1,0,FINAL_ANSWER: C
+MedMCQA,9078aaca-bbfd-41cd-ad69-03057fca84ba,Characteristic of venous blood flow of lower limb in duplex Doppler is?,BiomedKAI,2,2,2,2,538,17,555,7.337448,C,1,0,FINAL_ANSWER: C
+MedMCQA,9078aaca-bbfd-41cd-ad69-03057fca84ba,Characteristic of venous blood flow of lower limb in duplex Doppler is?,BiomedKAI,3,3,3,3,815,30,845,12.250392,B,1,0,FINAL_ANSWER: B
+MedMCQA,9078aaca-bbfd-41cd-ad69-03057fca84ba,Characteristic of venous blood flow of lower limb in duplex Doppler is?,KRAGEN,1,1,1,1,357,2,359,2.410199,B,1,0,FINAL_ANSWER: B
+MedMCQA,9078aaca-bbfd-41cd-ad69-03057fca84ba,Characteristic of venous blood flow of lower limb in duplex Doppler is?,KRAGEN,2,2,2,2,730,17,747,8.58722,B,1,0,FINAL_ANSWER: B
+MedMCQA,9078aaca-bbfd-41cd-ad69-03057fca84ba,Characteristic of venous blood flow of lower limb in duplex Doppler is?,KRAGEN,3,3,3,3,1221,32,1253,15.076366,B,1,0,FINAL_ANSWER: B
+MedMCQA,9078aaca-bbfd-41cd-ad69-03057fca84ba,Characteristic of venous blood flow of lower limb in duplex Doppler is?,HyperGraphRAG,1,1,1,1,281,2,283,1.784668,B,1,0,FINAL_ANSWER: B
+MedMCQA,9078aaca-bbfd-41cd-ad69-03057fca84ba,Characteristic of venous blood flow of lower limb in duplex Doppler is?,HyperGraphRAG,2,2,2,2,487,20,507,8.22317,B,1,0,FINAL_ANSWER: B
+MedMCQA,9078aaca-bbfd-41cd-ad69-03057fca84ba,Characteristic of venous blood flow of lower limb in duplex Doppler is?,HyperGraphRAG,3,3,3,3,706,32,738,12.497807,B,1,0,FINAL_ANSWER: B
+MedMCQA,9078aaca-bbfd-41cd-ad69-03057fca84ba,Characteristic of venous blood flow of lower limb in duplex Doppler is?,FlatControl,1,1,1,1,353,2,355,2.387123,B,1,0,FINAL_ANSWER: B
+MedMCQA,9078aaca-bbfd-41cd-ad69-03057fca84ba,Characteristic of venous blood flow of lower limb in duplex Doppler is?,FlatControl,2,2,2,2,645,14,659,6.900876,B,1,0,FINAL_ANSWER: B
+MedMCQA,9078aaca-bbfd-41cd-ad69-03057fca84ba,Characteristic of venous blood flow of lower limb in duplex Doppler is?,FlatControl,3,3,3,3,953,26,979,11.686321,B,1,0,FINAL_ANSWER: B
+MedMCQA,ac6be140-880b-40c6-9855-01f30c8dd7b2,"The source of calcium ions of a calcific bridge in a
+tooth in which calcium hydroxide pulpotomy has been
+performed is:",BiomedKAI,1,1,1,1,308,2,310,1.991504,C,1,0,FINAL_ANSWER: C
+MedMCQA,ac6be140-880b-40c6-9855-01f30c8dd7b2,"The source of calcium ions of a calcific bridge in a
+tooth in which calcium hydroxide pulpotomy has been
+performed is:",BiomedKAI,2,2,2,2,575,20,595,8.435063,D,1,0,FINAL_ANSWER: D
+MedMCQA,ac6be140-880b-40c6-9855-01f30c8dd7b2,"The source of calcium ions of a calcific bridge in a
+tooth in which calcium hydroxide pulpotomy has been
+performed is:",BiomedKAI,3,3,3,3,872,32,904,13.153078,D,1,0,FINAL_ANSWER: D
+MedMCQA,ac6be140-880b-40c6-9855-01f30c8dd7b2,"The source of calcium ions of a calcific bridge in a
+tooth in which calcium hydroxide pulpotomy has been
+performed is:",KRAGEN,1,1,1,1,420,2,422,2.878607,A,1,1,FINAL_ANSWER: A
+MedMCQA,ac6be140-880b-40c6-9855-01f30c8dd7b2,"The source of calcium ions of a calcific bridge in a
+tooth in which calcium hydroxide pulpotomy has been
+performed is:",KRAGEN,2,2,2,2,859,16,875,8.756092,D,1,0,FINAL_ANSWER: D
+MedMCQA,ac6be140-880b-40c6-9855-01f30c8dd7b2,"The source of calcium ions of a calcific bridge in a
+tooth in which calcium hydroxide pulpotomy has been
+performed is:",KRAGEN,3,3,3,3,1413,30,1443,15.08534,D,1,0,FINAL_ANSWER: D
+MedMCQA,ac6be140-880b-40c6-9855-01f30c8dd7b2,"The source of calcium ions of a calcific bridge in a
+tooth in which calcium hydroxide pulpotomy has been
+performed is:",HyperGraphRAG,1,1,1,1,298,2,300,1.962634,C,1,0,FINAL_ANSWER: C
+MedMCQA,ac6be140-880b-40c6-9855-01f30c8dd7b2,"The source of calcium ions of a calcific bridge in a
+tooth in which calcium hydroxide pulpotomy has been
+performed is:",HyperGraphRAG,2,2,2,2,515,14,529,6.232739,D,1,0,FINAL_ANSWER: D
+MedMCQA,ac6be140-880b-40c6-9855-01f30c8dd7b2,"The source of calcium ions of a calcific bridge in a
+tooth in which calcium hydroxide pulpotomy has been
+performed is:",HyperGraphRAG,3,3,3,3,748,26,774,10.504252,D,1,0,FINAL_ANSWER: D
+MedMCQA,ac6be140-880b-40c6-9855-01f30c8dd7b2,"The source of calcium ions of a calcific bridge in a
+tooth in which calcium hydroxide pulpotomy has been
+performed is:",FlatControl,1,1,1,1,387,2,389,2.708812,D,1,0,FINAL_ANSWER: D
+MedMCQA,ac6be140-880b-40c6-9855-01f30c8dd7b2,"The source of calcium ions of a calcific bridge in a
+tooth in which calcium hydroxide pulpotomy has been
+performed is:",FlatControl,2,2,2,2,728,22,750,10.09851,D,1,0,FINAL_ANSWER: D
+MedMCQA,ac6be140-880b-40c6-9855-01f30c8dd7b2,"The source of calcium ions of a calcific bridge in a
+tooth in which calcium hydroxide pulpotomy has been
+performed is:",FlatControl,3,3,3,3,1093,42,1135,17.604503,D,1,0,FINAL_ANSWER: D
+PubMedQA,21645374,Do mitochondria play a role in remodelling lace plant leaves during programmed cell death?,BiomedKAI,1,1,1,1,702,2,704,3.842337,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,21645374,Do mitochondria play a role in remodelling lace plant leaves during programmed cell death?,BiomedKAI,2,2,2,2,1364,21,1385,11.596649,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,21645374,Do mitochondria play a role in remodelling lace plant leaves during programmed cell death?,BiomedKAI,3,3,3,3,2063,40,2103,19.598704,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,21645374,Do mitochondria play a role in remodelling lace plant leaves during programmed cell death?,KRAGEN,1,1,1,1,780,2,782,3.522623,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,21645374,Do mitochondria play a role in remodelling lace plant leaves during programmed cell death?,KRAGEN,2,2,2,2,1609,16,1625,433.293213,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,21645374,Do mitochondria play a role in remodelling lace plant leaves during programmed cell death?,KRAGEN,3,3,3,3,2593,30,2623,104.29474,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,21645374,Do mitochondria play a role in remodelling lace plant leaves during programmed cell death?,HyperGraphRAG,1,1,1,1,692,2,694,3.752993,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,21645374,Do mitochondria play a role in remodelling lace plant leaves during programmed cell death?,HyperGraphRAG,2,2,2,2,1310,21,1331,11.329174,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,21645374,Do mitochondria play a role in remodelling lace plant leaves during programmed cell death?,HyperGraphRAG,3,3,3,3,1951,40,1991,19.075166,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,21645374,Do mitochondria play a role in remodelling lace plant leaves during programmed cell death?,FlatControl,1,1,1,1,1178,2,1180,33.08595,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,21645374,Do mitochondria play a role in remodelling lace plant leaves during programmed cell death?,FlatControl,2,2,2,2,2303,18,2321,53.111493,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,21645374,Do mitochondria play a role in remodelling lace plant leaves during programmed cell death?,FlatControl,3,3,3,3,3448,34,3482,70.969992,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,16418930,Landolt C and snellen e acuity: differences in strabismus amblyopia?,BiomedKAI,1,1,1,1,651,2,653,3.543122,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,16418930,Landolt C and snellen e acuity: differences in strabismus amblyopia?,BiomedKAI,2,2,2,2,1262,21,1283,11.326383,no,no,1,FINAL_ANSWER: no
+PubMedQA,16418930,Landolt C and snellen e acuity: differences in strabismus amblyopia?,BiomedKAI,3,3,3,3,1910,40,1950,19.171736,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,16418930,Landolt C and snellen e acuity: differences in strabismus amblyopia?,KRAGEN,1,1,1,1,728,2,730,3.973301,no,no,1,FINAL_ANSWER: no
+PubMedQA,16418930,Landolt C and snellen e acuity: differences in strabismus amblyopia?,KRAGEN,2,2,2,2,1497,16,1513,10.819082,no,no,1,FINAL_ANSWER: no
+PubMedQA,16418930,Landolt C and snellen e acuity: differences in strabismus amblyopia?,KRAGEN,3,3,3,3,2411,30,2441,16.89117,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,16418930,Landolt C and snellen e acuity: differences in strabismus amblyopia?,HyperGraphRAG,1,1,1,1,641,2,643,3.497209,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,16418930,Landolt C and snellen e acuity: differences in strabismus amblyopia?,HyperGraphRAG,2,2,2,2,1207,20,1227,10.773792,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,16418930,Landolt C and snellen e acuity: differences in strabismus amblyopia?,HyperGraphRAG,3,3,3,3,1834,64,1898,27.752163,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,16418930,Landolt C and snellen e acuity: differences in strabismus amblyopia?,FlatControl,1,1,1,1,1076,2,1078,25.580025,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,16418930,Landolt C and snellen e acuity: differences in strabismus amblyopia?,FlatControl,2,2,2,2,2099,18,2117,29.169322,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,16418930,Landolt C and snellen e acuity: differences in strabismus amblyopia?,FlatControl,3,3,3,3,3142,34,3176,37.249191,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,9488747,"Syncope during bathing in infants, a pediatric form of water-induced urticaria?",BiomedKAI,1,1,1,1,547,2,549,2.9227,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,9488747,"Syncope during bathing in infants, a pediatric form of water-induced urticaria?",BiomedKAI,2,2,2,2,1056,23,1079,11.091711,no,yes,0,FINAL_ANSWER: no
+PubMedQA,9488747,"Syncope during bathing in infants, a pediatric form of water-induced urticaria?",BiomedKAI,3,3,3,3,1604,44,1648,19.124502,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,9488747,"Syncope during bathing in infants, a pediatric form of water-induced urticaria?",KRAGEN,1,1,1,1,632,2,634,3.289519,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,9488747,"Syncope during bathing in infants, a pediatric form of water-induced urticaria?",KRAGEN,2,2,2,2,1319,16,1335,10.084776,no,yes,0,FINAL_ANSWER: no
+PubMedQA,9488747,"Syncope during bathing in infants, a pediatric form of water-induced urticaria?",KRAGEN,3,3,3,3,2137,30,2167,17.062483,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,9488747,"Syncope during bathing in infants, a pediatric form of water-induced urticaria?",HyperGraphRAG,1,1,1,1,537,2,539,2.891636,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,9488747,"Syncope during bathing in infants, a pediatric form of water-induced urticaria?",HyperGraphRAG,2,2,2,2,1000,21,1021,10.341134,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,9488747,"Syncope during bathing in infants, a pediatric form of water-induced urticaria?",HyperGraphRAG,3,3,3,3,1479,33,1512,14.99927,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,9488747,"Syncope during bathing in infants, a pediatric form of water-induced urticaria?",FlatControl,1,1,1,1,868,2,870,4.945775,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,9488747,"Syncope during bathing in infants, a pediatric form of water-induced urticaria?",FlatControl,2,2,2,2,1683,18,1701,12.242394,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,9488747,"Syncope during bathing in infants, a pediatric form of water-induced urticaria?",FlatControl,3,3,3,3,2518,34,2552,22.615318,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,17208539,Are the long-term results of the transanal pull-through equal to those of the transabdominal pull-through?,BiomedKAI,1,1,1,1,650,2,652,3.531303,no,no,1,FINAL_ANSWER: no
+PubMedQA,17208539,Are the long-term results of the transanal pull-through equal to those of the transabdominal pull-through?,BiomedKAI,2,2,2,2,1260,21,1281,11.243104,no,no,1,FINAL_ANSWER: no
+PubMedQA,17208539,Are the long-term results of the transanal pull-through equal to those of the transabdominal pull-through?,BiomedKAI,3,3,3,3,1886,26,1912,13.913187,no,no,1,FINAL_ANSWER: no
+PubMedQA,17208539,Are the long-term results of the transanal pull-through equal to those of the transabdominal pull-through?,KRAGEN,1,1,1,1,738,2,740,4.036018,no,no,1,FINAL_ANSWER: no
+PubMedQA,17208539,Are the long-term results of the transanal pull-through equal to those of the transabdominal pull-through?,KRAGEN,2,2,2,2,1593,16,1609,11.453309,no,no,1,FINAL_ANSWER: no
+PubMedQA,17208539,Are the long-term results of the transanal pull-through equal to those of the transabdominal pull-through?,KRAGEN,3,3,3,3,2607,30,2637,31.349381,no,no,1,FINAL_ANSWER: no
+PubMedQA,17208539,Are the long-term results of the transanal pull-through equal to those of the transabdominal pull-through?,HyperGraphRAG,1,1,1,1,640,2,642,3.363785,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,17208539,Are the long-term results of the transanal pull-through equal to those of the transabdominal pull-through?,HyperGraphRAG,2,2,2,2,1207,22,1229,11.30654,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,17208539,Are the long-term results of the transanal pull-through equal to those of the transabdominal pull-through?,HyperGraphRAG,3,3,3,3,1798,42,1840,19.272737,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,17208539,Are the long-term results of the transanal pull-through equal to those of the transabdominal pull-through?,FlatControl,1,1,1,1,1074,2,1076,32.022263,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,17208539,Are the long-term results of the transanal pull-through equal to those of the transabdominal pull-through?,FlatControl,2,2,2,2,2095,18,2113,27.771418,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,17208539,Are the long-term results of the transanal pull-through equal to those of the transabdominal pull-through?,FlatControl,3,3,3,3,3136,34,3170,34.400458,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,10808977,Can tailored interventions increase mammography use among HMO women?,BiomedKAI,1,1,1,1,588,2,590,3.073999,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10808977,Can tailored interventions increase mammography use among HMO women?,BiomedKAI,2,2,2,2,1139,24,1163,11.505801,no,yes,0,FINAL_ANSWER: no
+PubMedQA,10808977,Can tailored interventions increase mammography use among HMO women?,BiomedKAI,3,3,3,3,1730,46,1776,20.211391,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10808977,Can tailored interventions increase mammography use among HMO women?,KRAGEN,1,1,1,1,649,2,651,3.510049,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10808977,Can tailored interventions increase mammography use among HMO women?,KRAGEN,2,2,2,2,1347,16,1363,10.102838,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10808977,Can tailored interventions increase mammography use among HMO women?,KRAGEN,3,3,3,3,2226,30,2256,18.803332,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10808977,Can tailored interventions increase mammography use among HMO women?,HyperGraphRAG,1,1,1,1,578,2,580,3.056674,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10808977,Can tailored interventions increase mammography use among HMO women?,HyperGraphRAG,2,2,2,2,1084,23,1107,11.232663,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10808977,Can tailored interventions increase mammography use among HMO women?,HyperGraphRAG,3,3,3,3,1615,44,1659,18.984425,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10808977,Can tailored interventions increase mammography use among HMO women?,FlatControl,1,1,1,1,950,2,952,4.725544,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10808977,Can tailored interventions increase mammography use among HMO women?,FlatControl,2,2,2,2,1847,18,1865,15.650531,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10808977,Can tailored interventions increase mammography use among HMO women?,FlatControl,3,3,3,3,2764,34,2798,30.272998,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,23831910,Double balloon enteroscopy: is it efficacious and safe in a community setting?,BiomedKAI,1,1,1,1,626,2,628,3.31119,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,23831910,Double balloon enteroscopy: is it efficacious and safe in a community setting?,BiomedKAI,2,2,2,2,1215,24,1239,12.016787,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,23831910,Double balloon enteroscopy: is it efficacious and safe in a community setting?,BiomedKAI,3,3,3,3,1844,46,1890,20.839932,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,23831910,Double balloon enteroscopy: is it efficacious and safe in a community setting?,KRAGEN,1,1,1,1,702,2,704,3.831669,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,23831910,Double balloon enteroscopy: is it efficacious and safe in a community setting?,KRAGEN,2,2,2,2,1471,16,1487,10.658338,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,23831910,Double balloon enteroscopy: is it efficacious and safe in a community setting?,KRAGEN,3,3,3,3,2399,30,2429,24.227999,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,23831910,Double balloon enteroscopy: is it efficacious and safe in a community setting?,HyperGraphRAG,1,1,1,1,616,2,618,3.377262,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,23831910,Double balloon enteroscopy: is it efficacious and safe in a community setting?,HyperGraphRAG,2,2,2,2,1160,23,1183,11.449028,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,23831910,Double balloon enteroscopy: is it efficacious and safe in a community setting?,HyperGraphRAG,3,3,3,3,1729,44,1773,19.703172,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,23831910,Double balloon enteroscopy: is it efficacious and safe in a community setting?,FlatControl,1,1,1,1,1026,2,1028,22.478446,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,23831910,Double balloon enteroscopy: is it efficacious and safe in a community setting?,FlatControl,2,2,2,2,1999,18,2017,21.089025,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,23831910,Double balloon enteroscopy: is it efficacious and safe in a community setting?,FlatControl,3,3,3,3,2992,34,3026,33.472201,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,26037986,30-Day and 1-year mortality in emergency general surgery laparotomies: an area of concern and need for improvement?,BiomedKAI,1,1,1,1,591,2,593,3.108161,yes,maybe,0,FINAL_ANSWER: yes
+PubMedQA,26037986,30-Day and 1-year mortality in emergency general surgery laparotomies: an area of concern and need for improvement?,BiomedKAI,2,2,2,2,1142,21,1163,10.686234,no,maybe,0,FINAL_ANSWER: no
+PubMedQA,26037986,30-Day and 1-year mortality in emergency general surgery laparotomies: an area of concern and need for improvement?,BiomedKAI,3,3,3,3,1739,46,1785,20.299847,yes,maybe,0,FINAL_ANSWER: yes
+PubMedQA,26037986,30-Day and 1-year mortality in emergency general surgery laparotomies: an area of concern and need for improvement?,KRAGEN,1,1,1,1,689,2,691,3.765069,yes,maybe,0,FINAL_ANSWER: yes
+PubMedQA,26037986,30-Day and 1-year mortality in emergency general surgery laparotomies: an area of concern and need for improvement?,KRAGEN,2,2,2,2,1459,16,1475,10.595616,yes,maybe,0,FINAL_ANSWER: yes
+PubMedQA,26037986,30-Day and 1-year mortality in emergency general surgery laparotomies: an area of concern and need for improvement?,KRAGEN,3,3,3,3,2414,30,2444,16.876409,yes,maybe,0,FINAL_ANSWER: yes
+PubMedQA,26037986,30-Day and 1-year mortality in emergency general surgery laparotomies: an area of concern and need for improvement?,HyperGraphRAG,1,1,1,1,581,2,583,3.063329,yes,maybe,0,FINAL_ANSWER: yes
+PubMedQA,26037986,30-Day and 1-year mortality in emergency general surgery laparotomies: an area of concern and need for improvement?,HyperGraphRAG,2,2,2,2,1080,13,1093,7.508767,yes,maybe,0,FINAL_ANSWER: yes
+PubMedQA,26037986,30-Day and 1-year mortality in emergency general surgery laparotomies: an area of concern and need for improvement?,HyperGraphRAG,3,3,3,3,1594,24,1618,12.193109,yes,maybe,0,FINAL_ANSWER: yes
+PubMedQA,26037986,30-Day and 1-year mortality in emergency general surgery laparotomies: an area of concern and need for improvement?,FlatControl,1,1,1,1,956,2,958,5.679848,yes,maybe,0,FINAL_ANSWER: yes
+PubMedQA,26037986,30-Day and 1-year mortality in emergency general surgery laparotomies: an area of concern and need for improvement?,FlatControl,2,2,2,2,1859,18,1877,16.085583,yes,maybe,0,FINAL_ANSWER: yes
+PubMedQA,26037986,30-Day and 1-year mortality in emergency general surgery laparotomies: an area of concern and need for improvement?,FlatControl,3,3,3,3,2782,34,2816,33.220445,yes,maybe,0,FINAL_ANSWER: yes
+PubMedQA,26852225,Is adjustment for reporting heterogeneity necessary in sleep disorders?,BiomedKAI,1,1,1,1,613,2,615,3.386366,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,26852225,Is adjustment for reporting heterogeneity necessary in sleep disorders?,BiomedKAI,2,2,2,2,1182,17,1199,9.609677,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,26852225,Is adjustment for reporting heterogeneity necessary in sleep disorders?,BiomedKAI,3,3,3,3,1784,32,1816,15.65631,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,26852225,Is adjustment for reporting heterogeneity necessary in sleep disorders?,KRAGEN,1,1,1,1,676,2,678,3.588102,no,no,1,FINAL_ANSWER: no
+PubMedQA,26852225,Is adjustment for reporting heterogeneity necessary in sleep disorders?,KRAGEN,2,2,2,2,1419,16,1435,10.368018,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,26852225,Is adjustment for reporting heterogeneity necessary in sleep disorders?,KRAGEN,3,3,3,3,2333,30,2363,3848.224581,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,26852225,Is adjustment for reporting heterogeneity necessary in sleep disorders?,HyperGraphRAG,1,1,1,1,603,2,605,3.284532,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,26852225,Is adjustment for reporting heterogeneity necessary in sleep disorders?,HyperGraphRAG,2,2,2,2,1138,27,1165,12.493816,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,26852225,Is adjustment for reporting heterogeneity necessary in sleep disorders?,HyperGraphRAG,3,3,3,3,1678,38,1716,17.374549,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,26852225,Is adjustment for reporting heterogeneity necessary in sleep disorders?,FlatControl,1,1,1,1,1000,2,1002,26.843914,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,26852225,Is adjustment for reporting heterogeneity necessary in sleep disorders?,FlatControl,2,2,2,2,1953,21,1974,41.996939,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,26852225,Is adjustment for reporting heterogeneity necessary in sleep disorders?,FlatControl,3,3,3,3,2929,40,2969,1798.433421,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,17113061,Do mutations causing low HDL-C promote increased carotid intima-media thickness?,BiomedKAI,1,1,1,1,523,2,525,2.896768,no,no,1,FINAL_ANSWER: no
+PubMedQA,17113061,Do mutations causing low HDL-C promote increased carotid intima-media thickness?,BiomedKAI,2,2,2,2,994,24,1018,11.304101,no,no,1,FINAL_ANSWER: no
+PubMedQA,17113061,Do mutations causing low HDL-C promote increased carotid intima-media thickness?,BiomedKAI,3,3,3,3,1491,46,1537,19.921492,no,no,1,FINAL_ANSWER: no
+PubMedQA,17113061,Do mutations causing low HDL-C promote increased carotid intima-media thickness?,KRAGEN,1,1,1,1,603,2,605,3.292134,no,no,1,FINAL_ANSWER: no
+PubMedQA,17113061,Do mutations causing low HDL-C promote increased carotid intima-media thickness?,KRAGEN,2,2,2,2,1317,16,1333,9.852369,no,no,1,FINAL_ANSWER: no
+PubMedQA,17113061,Do mutations causing low HDL-C promote increased carotid intima-media thickness?,KRAGEN,3,3,3,3,2254,30,2284,16.34748,no,no,1,FINAL_ANSWER: no
+PubMedQA,17113061,Do mutations causing low HDL-C promote increased carotid intima-media thickness?,HyperGraphRAG,1,1,1,1,516,2,518,2.851086,no,no,1,FINAL_ANSWER: no
+PubMedQA,17113061,Do mutations causing low HDL-C promote increased carotid intima-media thickness?,HyperGraphRAG,2,2,2,2,954,17,971,8.884882,no,no,1,FINAL_ANSWER: no
+PubMedQA,17113061,Do mutations causing low HDL-C promote increased carotid intima-media thickness?,HyperGraphRAG,3,3,3,3,1411,32,1443,14.78616,no,no,1,FINAL_ANSWER: no
+PubMedQA,17113061,Do mutations causing low HDL-C promote increased carotid intima-media thickness?,FlatControl,1,1,1,1,826,2,828,4.668905,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,17113061,Do mutations causing low HDL-C promote increased carotid intima-media thickness?,FlatControl,2,2,2,2,1609,23,1632,13.933556,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,17113061,Do mutations causing low HDL-C promote increased carotid intima-media thickness?,FlatControl,3,3,3,3,2422,46,2468,32.898588,maybe,no,0,FINAL_ANSWER: maybe
+PubMedQA,10966337,A short stay or 23-hour ward in a general and academic children's hospital: are they effective?,BiomedKAI,1,1,1,1,823,2,825,4.682761,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10966337,A short stay or 23-hour ward in a general and academic children's hospital: are they effective?,BiomedKAI,2,2,2,2,1606,21,1627,13.009815,no,yes,0,FINAL_ANSWER: no
+PubMedQA,10966337,A short stay or 23-hour ward in a general and academic children's hospital: are they effective?,BiomedKAI,3,3,3,3,2426,40,2466,21.432115,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10966337,A short stay or 23-hour ward in a general and academic children's hospital: are they effective?,KRAGEN,1,1,1,1,907,2,909,8.413993,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10966337,A short stay or 23-hour ward in a general and academic children's hospital: are they effective?,KRAGEN,2,2,2,2,1945,16,1961,21.032846,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10966337,A short stay or 23-hour ward in a general and academic children's hospital: are they effective?,KRAGEN,3,3,3,3,3206,30,3236,56.104336,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10966337,A short stay or 23-hour ward in a general and academic children's hospital: are they effective?,HyperGraphRAG,1,1,1,1,813,2,815,4.6259,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10966337,A short stay or 23-hour ward in a general and academic children's hospital: are they effective?,HyperGraphRAG,2,2,2,2,1558,27,1585,14.820501,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10966337,A short stay or 23-hour ward in a general and academic children's hospital: are they effective?,HyperGraphRAG,3,3,3,3,2332,52,2384,24.71188,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10966337,A short stay or 23-hour ward in a general and academic children's hospital: are they effective?,FlatControl,1,1,1,1,1420,2,1422,67.361536,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10966337,A short stay or 23-hour ward in a general and academic children's hospital: are they effective?,FlatControl,2,2,2,2,2787,18,2805,70.407268,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,10966337,A short stay or 23-hour ward in a general and academic children's hospital: are they effective?,FlatControl,3,3,3,3,4174,34,4208,121.643598,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,25432938,Did Chile's traffic law reform push police enforcement?,BiomedKAI,1,1,1,1,554,2,556,1.415725,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,25432938,Did Chile's traffic law reform push police enforcement?,BiomedKAI,2,2,2,2,1064,17,1081,65.227328,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,25432938,Did Chile's traffic law reform push police enforcement?,BiomedKAI,3,3,3,3,1613,36,1649,17.167208,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,25432938,Did Chile's traffic law reform push police enforcement?,KRAGEN,1,1,1,1,613,2,615,3.342148,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,25432938,Did Chile's traffic law reform push police enforcement?,KRAGEN,2,2,2,2,1351,16,1367,10.329323,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,25432938,Did Chile's traffic law reform push police enforcement?,KRAGEN,3,3,3,3,2242,30,2272,17.789359,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,25432938,Did Chile's traffic law reform push police enforcement?,HyperGraphRAG,1,1,1,1,544,2,546,2.917729,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,25432938,Did Chile's traffic law reform push police enforcement?,HyperGraphRAG,2,2,2,2,1019,26,1045,12.34602,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,25432938,Did Chile's traffic law reform push police enforcement?,HyperGraphRAG,3,3,3,3,1525,52,1577,22.572333,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,25432938,Did Chile's traffic law reform push police enforcement?,FlatControl,1,1,1,1,882,2,884,5.012217,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,25432938,Did Chile's traffic law reform push police enforcement?,FlatControl,2,2,2,2,1715,20,1735,13.119103,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,25432938,Did Chile's traffic law reform push police enforcement?,FlatControl,3,3,3,3,2570,38,2608,21.476354,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,18847643,Therapeutic anticoagulation in the trauma patient: is it safe?,BiomedKAI,1,1,1,1,698,2,700,3.823705,no,no,1,FINAL_ANSWER: no
+PubMedQA,18847643,Therapeutic anticoagulation in the trauma patient: is it safe?,BiomedKAI,2,2,2,2,1359,24,1383,12.9027,no,no,1,FINAL_ANSWER: no
+PubMedQA,18847643,Therapeutic anticoagulation in the trauma patient: is it safe?,BiomedKAI,3,3,3,3,2054,42,2096,20.665376,no,no,1,FINAL_ANSWER: no
+PubMedQA,18847643,Therapeutic anticoagulation in the trauma patient: is it safe?,KRAGEN,1,1,1,1,765,2,767,4.14716,no,no,1,FINAL_ANSWER: no
+PubMedQA,18847643,Therapeutic anticoagulation in the trauma patient: is it safe?,KRAGEN,2,2,2,2,1573,16,1589,11.218328,no,no,1,FINAL_ANSWER: no
+PubMedQA,18847643,Therapeutic anticoagulation in the trauma patient: is it safe?,KRAGEN,3,3,3,3,2572,30,2602,467.807755,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,18847643,Therapeutic anticoagulation in the trauma patient: is it safe?,HyperGraphRAG,1,1,1,1,688,2,690,28.966607,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,18847643,Therapeutic anticoagulation in the trauma patient: is it safe?,HyperGraphRAG,2,2,2,2,1302,21,1323,61.749592,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,18847643,Therapeutic anticoagulation in the trauma patient: is it safe?,HyperGraphRAG,3,3,3,3,1935,40,1975,87.278124,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,18847643,Therapeutic anticoagulation in the trauma patient: is it safe?,FlatControl,1,1,1,1,1170,2,1172,107.567464,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,18847643,Therapeutic anticoagulation in the trauma patient: is it safe?,FlatControl,2,2,2,2,2287,18,2305,42.634661,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,18847643,Therapeutic anticoagulation in the trauma patient: is it safe?,FlatControl,3,3,3,3,3424,34,3458,54.29317,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,18239988,Differentiation of nonalcoholic from alcoholic steatohepatitis: are routine laboratory markers useful?,BiomedKAI,1,1,1,1,680,2,682,3.621269,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,18239988,Differentiation of nonalcoholic from alcoholic steatohepatitis: are routine laboratory markers useful?,BiomedKAI,2,2,2,2,1320,21,1341,11.570418,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,18239988,Differentiation of nonalcoholic from alcoholic steatohepatitis: are routine laboratory markers useful?,BiomedKAI,3,3,3,3,1997,40,2037,19.417325,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,18239988,Differentiation of nonalcoholic from alcoholic steatohepatitis: are routine laboratory markers useful?,KRAGEN,1,1,1,1,759,2,761,4.101734,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,18239988,Differentiation of nonalcoholic from alcoholic steatohepatitis: are routine laboratory markers useful?,KRAGEN,2,2,2,2,1601,30,1631,16.361408,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,18239988,Differentiation of nonalcoholic from alcoholic steatohepatitis: are routine laboratory markers useful?,KRAGEN,3,3,3,3,2550,30,2580,18.804128,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,18239988,Differentiation of nonalcoholic from alcoholic steatohepatitis: are routine laboratory markers useful?,HyperGraphRAG,1,1,1,1,670,2,672,3.593658,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,18239988,Differentiation of nonalcoholic from alcoholic steatohepatitis: are routine laboratory markers useful?,HyperGraphRAG,2,2,2,2,1262,17,1279,9.953356,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,18239988,Differentiation of nonalcoholic from alcoholic steatohepatitis: are routine laboratory markers useful?,HyperGraphRAG,3,3,3,3,1890,49,1939,22.430465,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,18239988,Differentiation of nonalcoholic from alcoholic steatohepatitis: are routine laboratory markers useful?,FlatControl,1,1,1,1,1134,2,1136,26.060091,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,18239988,Differentiation of nonalcoholic from alcoholic steatohepatitis: are routine laboratory markers useful?,FlatControl,2,2,2,2,2215,18,2233,41.85455,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,18239988,Differentiation of nonalcoholic from alcoholic steatohepatitis: are routine laboratory markers useful?,FlatControl,3,3,3,3,3316,34,3350,2138.002107,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,25957366,Prompting Primary Care Providers about Increased Patient Risk As a Result of Family History: Does It Work?,BiomedKAI,1,1,1,1,622,2,624,8.453915,no,no,1,FINAL_ANSWER: no
+PubMedQA,25957366,Prompting Primary Care Providers about Increased Patient Risk As a Result of Family History: Does It Work?,BiomedKAI,2,2,2,2,1195,17,1212,9.656932,no,no,1,FINAL_ANSWER: no
+PubMedQA,25957366,Prompting Primary Care Providers about Increased Patient Risk As a Result of Family History: Does It Work?,BiomedKAI,3,3,3,3,1784,30,1814,15.274319,no,no,1,FINAL_ANSWER: no
+PubMedQA,25957366,Prompting Primary Care Providers about Increased Patient Risk As a Result of Family History: Does It Work?,KRAGEN,1,1,1,1,712,2,714,3.832947,no,no,1,FINAL_ANSWER: no
+PubMedQA,25957366,Prompting Primary Care Providers about Increased Patient Risk As a Result of Family History: Does It Work?,KRAGEN,2,2,2,2,1497,22,1519,13.073031,no,no,1,FINAL_ANSWER: no
+PubMedQA,25957366,Prompting Primary Care Providers about Increased Patient Risk As a Result of Family History: Does It Work?,KRAGEN,3,3,3,3,2449,42,2491,24.407536,no,no,1,FINAL_ANSWER: no
+PubMedQA,25957366,Prompting Primary Care Providers about Increased Patient Risk As a Result of Family History: Does It Work?,HyperGraphRAG,1,1,1,1,616,2,618,3.415798,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,25957366,Prompting Primary Care Providers about Increased Patient Risk As a Result of Family History: Does It Work?,HyperGraphRAG,2,2,2,2,1174,37,1211,16.960559,no,no,1,FINAL_ANSWER: no
+PubMedQA,25957366,Prompting Primary Care Providers about Increased Patient Risk As a Result of Family History: Does It Work?,HyperGraphRAG,3,3,3,3,1749,50,1799,22.56637,no,no,1,FINAL_ANSWER: no
+PubMedQA,25957366,Prompting Primary Care Providers about Increased Patient Risk As a Result of Family History: Does It Work?,FlatControl,1,1,1,1,1026,2,1028,6.454102,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,25957366,Prompting Primary Care Providers about Increased Patient Risk As a Result of Family History: Does It Work?,FlatControl,2,2,2,2,2007,22,2029,19.356946,no,no,1,FINAL_ANSWER: no
+PubMedQA,25957366,Prompting Primary Care Providers about Increased Patient Risk As a Result of Family History: Does It Work?,FlatControl,3,3,3,3,3012,42,3054,30.863836,yes,no,0,FINAL_ANSWER: yes
+PubMedQA,24866606,Do emergency ultrasound fellowship programs impact emergency medicine residents' ultrasound education?,BiomedKAI,1,1,1,1,585,2,587,3.099296,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,24866606,Do emergency ultrasound fellowship programs impact emergency medicine residents' ultrasound education?,BiomedKAI,2,2,2,2,1125,16,1141,8.914538,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,24866606,Do emergency ultrasound fellowship programs impact emergency medicine residents' ultrasound education?,BiomedKAI,3,3,3,3,1697,30,1727,14.773679,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,24866606,Do emergency ultrasound fellowship programs impact emergency medicine residents' ultrasound education?,KRAGEN,1,1,1,1,654,2,656,3.535507,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,24866606,Do emergency ultrasound fellowship programs impact emergency medicine residents' ultrasound education?,KRAGEN,2,2,2,2,1386,35,1421,17.411954,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,24866606,Do emergency ultrasound fellowship programs impact emergency medicine residents' ultrasound education?,KRAGEN,3,3,3,3,2246,40,2286,21.357188,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,24866606,Do emergency ultrasound fellowship programs impact emergency medicine residents' ultrasound education?,HyperGraphRAG,1,1,1,1,575,2,577,3.108895,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,24866606,Do emergency ultrasound fellowship programs impact emergency medicine residents' ultrasound education?,HyperGraphRAG,2,2,2,2,1072,17,1089,9.207053,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,24866606,Do emergency ultrasound fellowship programs impact emergency medicine residents' ultrasound education?,HyperGraphRAG,3,3,3,3,1589,33,1622,15.964922,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,24866606,Do emergency ultrasound fellowship programs impact emergency medicine residents' ultrasound education?,FlatControl,1,1,1,1,944,2,946,5.575731,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,24866606,Do emergency ultrasound fellowship programs impact emergency medicine residents' ultrasound education?,FlatControl,2,2,2,2,1835,18,1853,13.291511,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,24866606,Do emergency ultrasound fellowship programs impact emergency medicine residents' ultrasound education?,FlatControl,3,3,3,3,2746,34,2780,20.894682,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,26578404,Patient-Controlled Therapy of Breathlessness in Palliative Care: A New Therapeutic Concept for Opioid Administration?,BiomedKAI,1,1,1,1,807,2,809,4.516881,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,26578404,Patient-Controlled Therapy of Breathlessness in Palliative Care: A New Therapeutic Concept for Opioid Administration?,BiomedKAI,2,2,2,2,1572,24,1596,14.150086,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,26578404,Patient-Controlled Therapy of Breathlessness in Palliative Care: A New Therapeutic Concept for Opioid Administration?,BiomedKAI,3,3,3,3,2363,46,2409,23.641603,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,26578404,Patient-Controlled Therapy of Breathlessness in Palliative Care: A New Therapeutic Concept for Opioid Administration?,KRAGEN,1,1,1,1,898,2,900,5.139129,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,26578404,Patient-Controlled Therapy of Breathlessness in Palliative Care: A New Therapeutic Concept for Opioid Administration?,KRAGEN,2,2,2,2,1857,16,1873,15.132657,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,26578404,Patient-Controlled Therapy of Breathlessness in Palliative Care: A New Therapeutic Concept for Opioid Administration?,KRAGEN,3,3,3,3,2951,30,2981,54.595979,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,26578404,Patient-Controlled Therapy of Breathlessness in Palliative Care: A New Therapeutic Concept for Opioid Administration?,HyperGraphRAG,1,1,1,1,792,2,794,4.46889,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,26578404,Patient-Controlled Therapy of Breathlessness in Palliative Care: A New Therapeutic Concept for Opioid Administration?,HyperGraphRAG,2,2,2,2,1508,19,1527,11.687838,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,26578404,Patient-Controlled Therapy of Breathlessness in Palliative Care: A New Therapeutic Concept for Opioid Administration?,HyperGraphRAG,3,3,3,3,2234,28,2262,16.029629,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,26578404,Patient-Controlled Therapy of Breathlessness in Palliative Care: A New Therapeutic Concept for Opioid Administration?,FlatControl,1,1,1,1,1378,2,1380,56.110771,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,26578404,Patient-Controlled Therapy of Breathlessness in Palliative Care: A New Therapeutic Concept for Opioid Administration?,FlatControl,2,2,2,2,2703,18,2721,52.241218,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,26578404,Patient-Controlled Therapy of Breathlessness in Palliative Care: A New Therapeutic Concept for Opioid Administration?,FlatControl,3,3,3,3,4048,34,4082,62.271876,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,11729377,Is there still a need for living-related liver transplantation in children?,BiomedKAI,1,1,1,1,666,2,668,3.581729,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,11729377,Is there still a need for living-related liver transplantation in children?,BiomedKAI,2,2,2,2,1295,24,1319,12.560154,no,yes,0,FINAL_ANSWER: no
+PubMedQA,11729377,Is there still a need for living-related liver transplantation in children?,BiomedKAI,3,3,3,3,1964,46,2010,21.615925,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,11729377,Is there still a need for living-related liver transplantation in children?,KRAGEN,1,1,1,1,734,2,736,4.017316,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,11729377,Is there still a need for living-related liver transplantation in children?,KRAGEN,2,2,2,2,1537,16,1553,11.025064,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,11729377,Is there still a need for living-related liver transplantation in children?,KRAGEN,3,3,3,3,2477,30,2507,18.840034,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,11729377,Is there still a need for living-related liver transplantation in children?,HyperGraphRAG,1,1,1,1,656,2,658,3.560556,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,11729377,Is there still a need for living-related liver transplantation in children?,HyperGraphRAG,2,2,2,2,1234,17,1251,9.810879,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,11729377,Is there still a need for living-related liver transplantation in children?,HyperGraphRAG,3,3,3,3,1831,32,1863,16.397046,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,11729377,Is there still a need for living-related liver transplantation in children?,FlatControl,1,1,1,1,1106,2,1108,23.597146,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,11729377,Is there still a need for living-related liver transplantation in children?,FlatControl,2,2,2,2,2159,18,2177,22.990886,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,11729377,Is there still a need for living-related liver transplantation in children?,FlatControl,3,3,3,3,3232,34,3266,50.42002,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,17096624,Do patterns of knowledge and attitudes exist among unvaccinated seniors?,BiomedKAI,1,1,1,1,449,2,451,2.160197,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,17096624,Do patterns of knowledge and attitudes exist among unvaccinated seniors?,BiomedKAI,2,2,2,2,858,21,879,9.724543,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,17096624,Do patterns of knowledge and attitudes exist among unvaccinated seniors?,BiomedKAI,3,3,3,3,1304,40,1344,17.364979,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,17096624,Do patterns of knowledge and attitudes exist among unvaccinated seniors?,KRAGEN,1,1,1,1,516,2,518,2.835889,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,17096624,Do patterns of knowledge and attitudes exist among unvaccinated seniors?,KRAGEN,2,2,2,2,1085,16,1101,9.122824,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,17096624,Do patterns of knowledge and attitudes exist among unvaccinated seniors?,KRAGEN,3,3,3,3,1817,30,1847,15.834683,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,17096624,Do patterns of knowledge and attitudes exist among unvaccinated seniors?,HyperGraphRAG,1,1,1,1,439,2,441,2.212932,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,17096624,Do patterns of knowledge and attitudes exist among unvaccinated seniors?,HyperGraphRAG,2,2,2,2,799,16,815,7.612169,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,17096624,Do patterns of knowledge and attitudes exist among unvaccinated seniors?,HyperGraphRAG,3,3,3,3,1172,25,1197,11.23998,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,17096624,Do patterns of knowledge and attitudes exist among unvaccinated seniors?,FlatControl,1,1,1,1,672,2,674,3.59165,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,17096624,Do patterns of knowledge and attitudes exist among unvaccinated seniors?,FlatControl,2,2,2,2,1285,15,1300,9.471555,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,17096624,Do patterns of knowledge and attitudes exist among unvaccinated seniors?,FlatControl,3,3,3,3,1940,38,1978,18.872402,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22694248,Is there a model to teach and practice retroperitoneoscopic nephrectomy?,BiomedKAI,1,1,1,1,602,2,604,3.362554,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22694248,Is there a model to teach and practice retroperitoneoscopic nephrectomy?,BiomedKAI,2,2,2,2,1164,21,1185,10.896542,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22694248,Is there a model to teach and practice retroperitoneoscopic nephrectomy?,BiomedKAI,3,3,3,3,1763,40,1803,18.981616,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22694248,Is there a model to teach and practice retroperitoneoscopic nephrectomy?,KRAGEN,1,1,1,1,678,2,680,3.617827,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22694248,Is there a model to teach and practice retroperitoneoscopic nephrectomy?,KRAGEN,2,2,2,2,1441,16,1457,10.793006,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22694248,Is there a model to teach and practice retroperitoneoscopic nephrectomy?,KRAGEN,3,3,3,3,2351,30,2381,18.143432,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22694248,Is there a model to teach and practice retroperitoneoscopic nephrectomy?,HyperGraphRAG,1,1,1,1,592,2,594,3.114829,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22694248,Is there a model to teach and practice retroperitoneoscopic nephrectomy?,HyperGraphRAG,2,2,2,2,1112,23,1135,11.400286,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22694248,Is there a model to teach and practice retroperitoneoscopic nephrectomy?,HyperGraphRAG,3,3,3,3,1657,44,1701,19.590178,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22694248,Is there a model to teach and practice retroperitoneoscopic nephrectomy?,FlatControl,1,1,1,1,978,2,980,5.696303,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22694248,Is there a model to teach and practice retroperitoneoscopic nephrectomy?,FlatControl,2,2,2,2,1903,18,1921,13.342212,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22694248,Is there a model to teach and practice retroperitoneoscopic nephrectomy?,FlatControl,3,3,3,3,2848,34,2882,21.329052,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22990761,Cardiovascular risk in a rural adult West African population: is resting heart rate also relevant?,BiomedKAI,1,1,1,1,668,2,670,3.601261,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22990761,Cardiovascular risk in a rural adult West African population: is resting heart rate also relevant?,BiomedKAI,2,2,2,2,1292,17,1309,10.15056,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22990761,Cardiovascular risk in a rural adult West African population: is resting heart rate also relevant?,BiomedKAI,3,3,3,3,1961,43,2004,20.700898,no,yes,0,FINAL_ANSWER: no
+PubMedQA,22990761,Cardiovascular risk in a rural adult West African population: is resting heart rate also relevant?,KRAGEN,1,1,1,1,743,2,745,4.063888,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22990761,Cardiovascular risk in a rural adult West African population: is resting heart rate also relevant?,KRAGEN,2,2,2,2,1556,15,1571,10.834282,no,yes,0,FINAL_ANSWER: no
+PubMedQA,22990761,Cardiovascular risk in a rural adult West African population: is resting heart rate also relevant?,KRAGEN,3,3,3,3,2561,28,2589,19.645639,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22990761,Cardiovascular risk in a rural adult West African population: is resting heart rate also relevant?,HyperGraphRAG,1,1,1,1,658,2,660,6.050791,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22990761,Cardiovascular risk in a rural adult West African population: is resting heart rate also relevant?,HyperGraphRAG,2,2,2,2,1235,14,1249,8.756482,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22990761,Cardiovascular risk in a rural adult West African population: is resting heart rate also relevant?,HyperGraphRAG,3,3,3,3,1837,32,1869,16.367649,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22990761,Cardiovascular risk in a rural adult West African population: is resting heart rate also relevant?,FlatControl,1,1,1,1,1110,2,1112,25.113333,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22990761,Cardiovascular risk in a rural adult West African population: is resting heart rate also relevant?,FlatControl,2,2,2,2,2167,18,2185,23.642717,yes,yes,1,FINAL_ANSWER: yes
+PubMedQA,22990761,Cardiovascular risk in a rural adult West African population: is resting heart rate also relevant?,FlatControl,3,3,3,3,3244,34,3278,34.816058,yes,yes,1,FINAL_ANSWER: yes
